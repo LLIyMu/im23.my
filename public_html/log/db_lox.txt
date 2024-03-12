@@ -1,0 +1,196 @@
+fault: 16-02-2024 14:23:51 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('test','1','1','','Array','',NOW(),NOW(),'test') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 14:24:35 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('test','1','1','','Array','',NOW(),NOW(),'test') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 14:32:52 - Ошибка в SQL запросе UPDATE goods SET alias='dddddd-32' WHERE .id='32'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='32'' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 14:45:06 - Ошибка в SQL запросе UPDATE goods SET alias='dddddd-33' WHERE .id='33'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='33'' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 14:47:12 - Ошибка в SQL запросе UPDATE goods SET alias='dddddd-35' WHERE .id='35'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='35'' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 14:47:37 - Ошибка в SQL запросе UPDATE goods SET alias='dddddd-36' WHERE .id='36'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='36'' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 14:47:46 - Ошибка в SQL запросе UPDATE goods SET alias='dddddd-37' WHERE .id='37'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='37'' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 14:48:05 - Ошибка в SQL запросе UPDATE goods SET alias='dddddd-38' WHERE .id='38'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='38'' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 14:48:21 - Ошибка в SQL запросе UPDATE goods SET alias='dddddd-39' WHERE .id='39'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='39'' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 14:50:55 - Ошибка в SQL запросе UPDATE goods SET alias='dddddd-40' WHERE .id='40'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='40'' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 14:51:01 - Ошибка в SQL запросе UPDATE goods SET alias='dddddd-41' WHERE .id='41'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='41'' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 14:51:06 - Ошибка в SQL запросе UPDATE goods SET alias='dddddd-42' WHERE .id='42'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='42'' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 14:54:00 - Ошибка в SQL запросе UPDATE goods SET alias='dddddd-43' WHERE .id='43'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='43'' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 18:30:16 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('йй','1','1','','{\"filters\":[\"17\"]}','',NOW(),NOW(),'yy') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 19:04:54 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('йй','1','1','','{\"filters\":[\"17\"]}','',NOW(),NOW(),'yy') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 19:05:04 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('йй','1','1','','{\"filters\":[\"17\"]}','',NOW(),NOW(),'yy') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 19:05:21 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('йй','1','1','','{\"filters\":[\"17\"]}','',NOW(),NOW(),'yy') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 19:05:43 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('ф','1','1','','{\"filters\":[\"17\"]}','',NOW(),NOW(),'f') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 19:22:51 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('ф','1','1','','{\"filters\":[\"17\"]}','',NOW(),NOW(),'f') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 16-02-2024 19:27:44 - Ошибка в SQL запросе INSERT INTO goods_filters (goods_id,filters_id) VALUES (NULL,'17') - 1048 Column 'goods_id' cannot be null
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 17-02-2024 4:30:41 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('321321','1','1','','{\"filters\":[\"17\"]}','',NOW(),NOW(),'321321') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 17-02-2024 4:32:12 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('ыы','1','1','','{\"filters\":[\"17\"]}','',NOW(),NOW(),'yy') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 17-02-2024 5:13:49 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('ыы','1','1','','{\"filters\":[\"17\"]}','',NOW(),NOW(),'yy') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 17-02-2024 5:14:21 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('ы1','1','1','','{\"filters\":[\"17\"]}','',NOW(),NOW(),'y1') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 22-02-2024 4:05:46 - Ошибка в SQL запросе UPDATE goods SET alias='prosto-bez-filtrov-46' WHERE .id='46'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='46'' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 22-02-2024 4:17:05 - Ошибка в SQL запросе SELECT goods.*,f.name as TABLEfTABLE_st_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.content as TABLEfiltersTABLE_content,filters.parent_id as TABLEfiltersTABLE_parent_id FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.teachers LEFT JOIN filters f ON goods_filters.students=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('12','13')  ORDER BY goods.id DESC - 1054 Unknown column 'goods_filters.teachers' in 'on clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 22-02-2024 4:17:57 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('aas','9','1','s1','{\"filters\":[\"18\"]}','ssss',NOW(),NOW(),'aas') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 22-02-2024 4:21:06 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('aas','9','1','s1','{\"filters\":[\"18\"]}','ssss',NOW(),NOW(),'aas') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 22-02-2024 4:30:51 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('aas','9','1','s1','{\"filters\":[\"18\"]}','ssss',NOW(),NOW(),'aas') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 22-02-2024 4:33:26 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('aas','9','1','s1','{\"filters\":[\"18\"]}','ssss',NOW(),NOW(),'aas') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 09-03-2024 11:13:08 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('dddddd','1','1','','{\"filters\":[\"18\"]}','',NOW(),NOW(),'dddddd') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 09-03-2024 12:45:04 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('dddddd','1','1','','{\"filters\":[\"18\"]}','',NOW(),NOW(),'dddddd') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 09-03-2024 13:10:24 - Ошибка в SQL запросе SELECT goods.* FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.teachers WHERE goods.id IN ('12','13') - 1054 Unknown column 'goods_filters.teachers' in 'on clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 09-03-2024 13:16:27 - Ошибка в SQL запросе SELECT goods.id as idgoods.namegoods.img FROM goods   ORDER BY goods.menu_position ASC - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.namegoods.img FROM goods   ORDER BY goods.menu_position ASC' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 09-03-2024 13:18:15 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('a','1','1','ss','{\"filters\":[\"18\"]}','',NOW(),NOW(),'a') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 09-03-2024 13:21:56 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('a','1','1','ss','{\"filters\":[\"18\"]}','',NOW(),NOW(),'a') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 09-03-2024 13:23:39 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('a','1','1','ss','{\"filters\":[\"18\"]}','',NOW(),NOW(),'a') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 09-03-2024 13:23:48 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('a','1','1','ss','{\"filters\":[\"18\"]}','',NOW(),NOW(),'a') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 09-03-2024 13:24:04 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('a','1','1','ss','{\"filters\":[\"18\"]}','',NOW(),NOW(),'a') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 09-03-2024 13:24:22 - Ошибка в SQL запросе INSERT INTO goods (name,menu_position,visible,keywords,filters,content,date,datetime,alias) VALUES ('a','1','1','ss','{\"filters\":[\"18\"]}','',NOW(),NOW(),'a') - 1054 Unknown column 'filters' in 'field list'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 09-03-2024 13:39:42 - Ошибка в SQL запросе UPDATE goods SET alias='a-48' WHERE .id='48'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='48'' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 10-03-2024 16:32:36 - Ошибка в SQL запросе UPDATE goods SET alias='yf-50' WHERE .id='50'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='50'' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 10-03-2024 17:26:02 - Ошибка в SQL запросе UPDATE goods SET alias='yf-51' WHERE .id='51'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='51'' at line 1
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 10-03-2024 19:24:54 - Ошибка в SQL запросе SELECT goods.*,f.name as TABLEfTABLE_st_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.content as TABLEfiltersTABLE_content,filters.parent_id as TABLEfiltersTABLE_parent_id FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.goods_id LEFT JOIN filters f ON goods_filters.students=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('12','13') - 1054 Unknown column 'goods_filters.students' in 'on clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 10-03-2024 19:25:24 - Ошибка в SQL запросе SELECT goods.*,f.name as TABLEfTABLE_st_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.content as TABLEfiltersTABLE_content,filters.parent_id as TABLEfiltersTABLE_parent_id FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.goods_id LEFT JOIN filters f ON goods_filters.students=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('12','13') - 1054 Unknown column 'goods_filters.students' in 'on clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 10-03-2024 19:28:06 - Ошибка в SQL запросе SELECT goods.*,f.name as TABLEfTABLE_st_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.content as TABLEfiltersTABLE_content,filters.parent_id as TABLEfiltersTABLE_parent_id FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.goods_id LEFT JOIN filters f ON goods_filters.parent_id=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('12','13') - 1054 Unknown column 'goods_filters.parent_id' in 'on clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 10-03-2024 19:28:07 - Ошибка в SQL запросе SELECT goods.*,f.name as TABLEfTABLE_st_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.content as TABLEfiltersTABLE_content,filters.parent_id as TABLEfiltersTABLE_parent_id FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.goods_id LEFT JOIN filters f ON goods_filters.parent_id=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('12','13') - 1054 Unknown column 'goods_filters.parent_id' in 'on clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 11-03-2024 7:43:05 - Ошибка в SQL запросе SELECT goods.*,f.name as TABLEfTABLE_st_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.content as TABLEfiltersTABLE_content,filters.parent_id as TABLEfiltersTABLE_parent_id FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.goods_id LEFT JOIN filters f ON goods_filters.parent_id=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('12','13') - 1054 Unknown column 'goods_filters.parent_id' in 'on clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 11-03-2024 16:20:35 - Ошибка в SQL запросе SELECT goods.*,f.name as TABLEfTABLE_st_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.content as TABLEfiltersTABLE_content,filters.parent_id as TABLEfiltersTABLE_parent_id FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.goods_id LEFT JOIN filters f ON goods_filters.parent_id=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('12','13') - 1054 Unknown column 'goods_filters.parent_id' in 'on clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
