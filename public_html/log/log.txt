@@ -2,3 +2,23 @@ fault: 09-03-2024 13:17:18 - Отсутствует шаблон - core/admin/vi
 file F:\OSPanel\domains\im23.my\public_html\core\base\controller\BaseController.php
 In line 102
 
+fault: 13-03-2024 4:00:08 - Не верное имя файла - core/admin/controller/DeleteController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 37
+
+fault: 16-03-2024 4:25:53 - Не верное имя файла - core/user/controller/UserfilesController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 37
+
+fault: 16-03-2024 4:33:00 - Не верное имя файла - core/user/controller/UserfilesController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 37
+
+fault: 16-03-2024 4:33:06 - Не верное имя файла - core/user/controller/UserfilesController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 37
+
+fault: 19-03-2024 3:43:42 - Не корректный идентификатор -  при редактировании таблицы - goods
+file F:\OSPanel\domains\im23.my\public_html\core\admin\controller\EditController.php
+In line 42
+

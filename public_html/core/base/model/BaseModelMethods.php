@@ -200,14 +200,14 @@ trait BaseModelMethods
 				
 				$where .= ' ';
 				
-				if($set['operand'][$o_count]){
+				if(isset($set['operand'][$o_count])){
 					$operand = $set['operand'][$o_count];
 					$o_count++;
 				}else{
 					$operand = $set['operand'][$o_count - 1];
 				}
 				
-				if($set['condition'][$c_count]){
+				if(isset($set['condition'][$c_count])){
 					$condition = $set['condition'][$c_count];
 					$c_count++;
 				}else{
@@ -256,7 +256,10 @@ trait BaseModelMethods
 					
 					if(strpos($item, 'SELECT') === 0){
 						$where .= $table . $key . $operand . '(' . $item . ") $condition";
-					}else{
+					}elseif ($item === null || $item === 'NULL'){
+                        if ($operand === '=') $where .= $table . $key . ' IS NULL ' . $condition;
+                            else $where .= $table . $key . ' IS NOT NULL ' . $condition;
+                    } else{
 						$where .= $table . $key . $operand . "'" . addslashes($item) . "' $condition";
 					}
 					
@@ -403,7 +406,7 @@ trait BaseModelMethods
             if (isset($fields)){
                 foreach ($fields as $row => $value){
 
-                    if (isset($except) && in_array($row, $except)) continue;
+                    if (!empty($except) && in_array($row, $except)) continue;
 
                     $insert_arr['fields'] .= $row . ',';
                     if (is_array($value)) $value = json_encode($value);
@@ -454,7 +457,7 @@ trait BaseModelMethods
 				
 				if(in_array($value, $this->sqlFunc)){
 					$update .= $value .',';
-				}elseif ($value === NULL){
+				}elseif ($value === NULL || $value === 'NULL'){
                     $update .= "NULL" .',';
                 }else{
 					$update .= "'" . addslashes($value) . "',";
@@ -470,8 +473,8 @@ trait BaseModelMethods
 				
 				$update .= $row . '=';
 				
-				if(is_array($files)) $update .= "'" . addslashes(json_encode($file)) . "'" . ',';
-				else $update .= "'" . addslashes($file) . "'" . ',';
+				if(is_array($file)) $update .= "'" . addslashes(json_encode($file)) . "'" . ',';
+				else $update .= "'" .  addslashes($file) . "',";
 				
 			}
 			

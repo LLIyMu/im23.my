@@ -194,3 +194,23 @@ fault: 11-03-2024 16:20:35 - Ошибка в SQL запросе SELECT goods.*,f
 file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
 In line 44
 
+fault: 12-03-2024 4:26:05 - Ошибка в SQL запросе INSERT INTO filters (name,parent_id,menu_position,content) VALUES ('Height','0','2','') - 1452 Cannot add or update a child row: a foreign key constraint fails (`im23`.`filters`, CONSTRAINT `filters_filters_id_fk` FOREIGN KEY (`parent_id`) REFERENCES `filters` (`id`))
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 13-03-2024 3:47:15 - Ошибка в SQL запросе SELECT goods_filters.filters_id FROM goods_filters  WHERE goods_filters.0='goods_id' AND goods_filters.1='10' - 1054 Unknown column 'goods_filters.0' in 'where clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 13-03-2024 3:47:58 - Ошибка в SQL запросе SELECT goods_filters.filters_id FROM goods_filters  WHERE goods_filters.0='goods_id' AND goods_filters.1='10' - 1054 Unknown column 'goods_filters.0' in 'where clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 13-03-2024 3:48:03 - Ошибка в SQL запросе SELECT goods_filters.filters_id FROM goods_filters  WHERE goods_filters.0='goods_id' AND goods_filters.1='14' - 1054 Unknown column 'goods_filters.0' in 'where clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 13-03-2024 3:50:27 - Ошибка в SQL запросе SELECT goods_filters.filters_id FROM goods_filters  WHERE goods_filters.0='goods_id' AND goods_filters.1='14' - 1054 Unknown column 'goods_filters.0' in 'where clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+

@@ -2,16 +2,54 @@
 
 namespace core\admin\controller;
 
+use core\base\exceptions\RouteException;
+
 class EditController extends BaseAdmin
 {
 
+    protected $action = 'edit';
     protected function inputData()
     {
         if (!$this->userId) $this->executeBase();
+
+        $this->checkPost();
+
+        $this->createTableData();
+
+        $this->createData();
+
+        $this->createForeignData();
+
+        $this->createMenuPosition();
+
+        $this->createRadio();
+
+        $this->createOutputData();
+
+        $this->createManyToMany();
+
+        $this->template = ADMIN_TEMPLATE . 'add';
+
+        return $this->expansion();
     }
 
-    protected function checkOldAlias($id)
-    {
+    protected function createData(){
+
+        $id = is_numeric($this->parameters[$this->table]) ?
+            $this->clearNum($this->parameters[$this->table]) :
+            $this->clearStr($this->parameters[$this->table]);
+
+        if (!$id) throw new RouteException('Не корректный идентификатор - ' . $id . ' при редактировании таблицы - ' . $this->table);
+
+        $this->data = $this->model->get($this->table, [
+            'where' => [$this->columns['id_row'] => $id]
+        ]);
+
+        $this->data && $this->data = $this->data[0];
+
+    }
+
+    protected function checkOldAlias($id){
 
         $tables = $this->model->showTables();
 
@@ -39,6 +77,49 @@ class EditController extends BaseAdmin
                         'table_id' => $id
                     ]
                 ]);
+
+            }
+
+        }
+
+    }
+
+    protected function checkFiles($id){
+
+        if ($id && $this->fileArray){
+
+            $data = $this->model->get($this->table, [
+                'fields' => array_keys($this->fileArray),
+                'where' => [$this->columns['id_row'] => $id]
+            ]);
+
+            if ($data){
+
+                $data = $data[0];
+
+                foreach ($this->fileArray as $key => $item){
+
+                    if (is_array($item) && !empty($data[$key])){
+
+                        $fileArr = json_decode($data[$key]);
+
+                        if ($fileArr){
+
+                            foreach ($fileArr as $file){
+
+                                $this->fileArray[$key][] = $file;
+
+                            }
+
+                        }
+
+                    }elseif (!empty($data[$key])){
+
+                        @unlink($_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR . $data[$key]);
+
+                    }
+
+                }
 
             }
 

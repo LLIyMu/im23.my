@@ -43,9 +43,11 @@ class Settings
 		'radio' => ['visible'],
 		'select' => ['menu_position', 'parent_id'],
 		'checkboxlist' => ['filters'],
-		'img' => ['img'],
+		'img' => ['img', 'main_img'],
 		'gallery_img' => ['gallery_img']
 	];
+
+    private $fileTemplates = ['img', 'gallery_img'];
 
     private $translate = [
         'name' => ['Название', 'Не более 100 символов'],
@@ -54,7 +56,7 @@ class Settings
     //разделитель блоков вёрстки
     private $blockSeparator = [
         'left-block' => [],
-        'right-block' => ['img', 'gallery_img'],
+        'right-block' => ['img','main_img'],
         'content-block' => ['content'],
     ];
 
@@ -81,7 +83,7 @@ class Settings
     ];
     private $rootItems = [
         'name' => 'Корневая',
-        'tables' => ['articles']
+        'tables' => ['articles', 'filters']
     ];
     private $defaultTable = 'goods';
     private $expansion = 'core/admin/expansion/';

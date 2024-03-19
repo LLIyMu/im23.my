@@ -2,6 +2,7 @@
 
 defined('ACCESS') or die('Access denied');
 
+const MS_MODE = false; //определение браузера
 const TEMPLATE = 'templates/default/';
 const ADMIN_TEMPLATE = 'core/admin/views/';
 
