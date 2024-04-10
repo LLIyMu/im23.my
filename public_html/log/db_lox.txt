@@ -214,3 +214,27 @@ fault: 13-03-2024 3:50:27 - Ошибка в SQL запросе SELECT goods_filt
 file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
 In line 44
 
+fault: 07-04-2024 7:30:09 - Ошибка в SQL запросе SELECT goods.*,f.name as TABLEfTABLE_st_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.content as TABLEfiltersTABLE_content,filters.parent_id as TABLEfiltersTABLE_parent_id,filters.menu_position as TABLEfiltersTABLE_menu_position FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.goods_id LEFT JOIN filters f ON goods_filters.parent_id=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('12','13') - 1054 Unknown column 'goods_filters.parent_id' in 'on clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 08-04-2024 4:52:56 - Ошибка в SQL запросе SELECT goods.*,f.name as TABLEfTABLE_st_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.content as TABLEfiltersTABLE_content,filters.parent_id as TABLEfiltersTABLE_parent_id,filters.menu_position as TABLEfiltersTABLE_menu_position FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.goods_id LEFT JOIN filters f ON goods_filters.parent_id=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('12','13') - 1054 Unknown column 'goods_filters.parent_id' in 'on clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 08-04-2024 4:56:45 - Ошибка в SQL запросе SELECT goods.*,f.name as TABLEfTABLE_st_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.content as TABLEfiltersTABLE_content,filters.parent_id as TABLEfiltersTABLE_parent_id,filters.menu_position as TABLEfiltersTABLE_menu_position FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.goods_id LEFT JOIN filters f ON goods_filters.parent_id=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('12','13') - 1054 Unknown column 'goods_filters.parent_id' in 'on clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 08-04-2024 4:58:12 - Ошибка в SQL запросе SELECT goods.*,f.name as TABLEfTABLE_st_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.content as TABLEfiltersTABLE_content,filters.parent_id as TABLEfiltersTABLE_parent_id,filters.menu_position as TABLEfiltersTABLE_menu_position FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.goods_id LEFT JOIN filters f ON goods_filters.parent_id=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('12','13') - 1054 Unknown column 'goods_filters.parent_id' in 'on clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 08-04-2024 4:58:13 - Ошибка в SQL запросе SELECT goods.*,f.name as TABLEfTABLE_st_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.content as TABLEfiltersTABLE_content,filters.parent_id as TABLEfiltersTABLE_parent_id,filters.menu_position as TABLEfiltersTABLE_menu_position FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.goods_id LEFT JOIN filters f ON goods_filters.parent_id=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('12','13') - 1054 Unknown column 'goods_filters.parent_id' in 'on clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+
+fault: 08-04-2024 4:58:20 - Ошибка в SQL запросе SELECT goods.*,f.name as TABLEfTABLE_st_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.content as TABLEfiltersTABLE_content,filters.parent_id as TABLEfiltersTABLE_parent_id,filters.menu_position as TABLEfiltersTABLE_menu_position FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.goods_id LEFT JOIN filters f ON goods_filters.parent_id=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('12','13') - 1054 Unknown column 'goods_filters.parent_id' in 'on clause'
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+

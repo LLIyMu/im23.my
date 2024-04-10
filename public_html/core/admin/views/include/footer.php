@@ -13,6 +13,7 @@
         <script>
             const PATH = '<?=PATH?>';
             const ADMIN_MODE = 1;
+            const tinyMceDefaultAreas = '<?= implode($this->templateBlocks['content-block']) ?>';
         </script>
 
         <?php $this->getScripts();?>

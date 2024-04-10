@@ -189,10 +189,6 @@ function createFile() {
 
                 createJsSortable(form);
 
-                e.preventDefault()
-
-                return false
-
                 if (!isEmpty(fileStore)){
 
                     e.preventDefault();
@@ -471,6 +467,38 @@ let searchResultHover = (() => {
 })()
 
 searchResultHover()
+
+search()
+
+function search() {
+
+    let searchInput = document.querySelector('input[name=search]');
+
+    if (searchInput){
+
+        searchInput.oninput = () => {
+
+            if (searchInput.value.length > 1){
+
+                Ajax(
+                    {
+                        data:{
+                            data: searchInput.value,
+                            table: document.querySelector('input[name=search_table]').value,
+                            ajax: 'search'
+                        }
+                    }
+                ).then(res =>{
+                    console.log(res)
+                })
+
+            }
+
+        }
+
+    }
+
+}
 
 let galleries = document.querySelectorAll('.gallery_container');
 

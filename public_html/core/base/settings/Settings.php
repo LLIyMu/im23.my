@@ -4,8 +4,7 @@ namespace core\base\settings;
 
 use core\base\controller\Singleton;
 
-class Settings
-{
+class Settings{
 	
 	use Singleton;
 	

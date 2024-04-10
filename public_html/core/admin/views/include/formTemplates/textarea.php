@@ -16,7 +16,7 @@
             <div class="vg-element vg-full vg-left" style="flex-wrap: wrap">
                 <div style="width: 100%; margin-bottom: 10px">
                     <label>
-                        <input type="checkbox" class="tinyMceInit" style="display: inline">
+                        <input type="checkbox" class="tinyMceInit" style="display: inline" <?= $class === 'content-block' ? 'checked' : ''?>>
                         Визуальный режим
                     </label>
                 </div>

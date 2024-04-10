@@ -13,6 +13,8 @@ class ShowController extends BaseAdmin
 
         $this->createTableData();
 
+        $this->createOutputData();
+
         $this->createData();
 
         return $this->expansion();
