@@ -22,9 +22,32 @@ function MCEInit(element, height = 400) {
         automatic_uploads: true,
         file_picker_types: 'image',//в случае когда нужно добавлять видео через редактор, можно закомментировать это свойство
         images_reuse_filename: true,
+        imagetools_toolbar: 'editimage imageoptions',
         images_upload_handler: function (file, success, fail) {
 
+            let formData = new FormData;
 
+            formData.append('file', file.blob(), file.filename());
+
+            formData.append('ajax', 'tinymce_file');
+
+            formData.append('table', document.querySelector('input[name=table]').value);
+
+            Ajax({
+
+                url: document.querySelector('#main-form').getAttribute('action'),
+                data: formData,
+                contentType: false,
+                processData: false,
+                type: 'post'
+
+            }).then(res => {
+
+                console.log(res)
+
+                success(JSON.parse(res).location)
+
+            })
 
         },
         file_picker_callback: function (callback, value, meta) {

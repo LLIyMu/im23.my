@@ -2,6 +2,8 @@
 
 namespace core\admin\controller;
 
+use libraries\FileEdit;
+
 class AjaxController extends BaseAdmin
 {
 
@@ -46,6 +48,18 @@ class AjaxController extends BaseAdmin
                     return $this->search();
 
                     break;
+					
+				case 'tinymce_file':
+
+                    $fileEdit = new FileEdit();
+
+                    $fileEdit->setUniqueFile(false);
+
+                    $file = $fileEdit->addFile($this->clearStr($this->ajaxData['table']) . '/content_file/');
+
+                    return ['location' => PATH . UPLOAD_DIR . $file[key($file)]];
+	
+	                break;
 
             }
 
