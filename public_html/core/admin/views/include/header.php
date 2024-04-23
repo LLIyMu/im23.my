@@ -31,16 +31,10 @@
                     <div>
                         <img src="<?=PATH.ADMIN_TEMPLATE?>img/search.png" alt="">
                     </div>
-                    <form method="post" action="<?=PATH. \core\base\settings\Settings::get('routes')['admin']['alias']?>/search" autocomplete="off">
+                    <form method="get" action="<?=PATH . \core\base\settings\Settings::get('routes')['admin']['alias']?>/search" autocomplete="off">
                         <input type="text" name="search" class="vg-input vg-text">
                         <input type="hidden" name="search_table" value="<?=$this->table?>">
-                        <div class="vg-element vg-firm-background-color4 vg-box-shadow search_links search_res">
-                            <a href="">LINK-1</a>
-                            <a href="">LINK-2</a>
-                            <a href="">LINK-3</a>
-                            <a href="">LINK-4</a>
-                            <a href="">LINK-5</a>
-                        </div>
+                        <div class="vg-element vg-firm-background-color4 vg-box-shadow search_links search_res"></div>
                     </form>
                 </div>
             </div>
@@ -73,7 +67,7 @@
                     <a href="<?=$this->adminPath?>show/<?=$table?>" class="vg-wrap vg-element vg-full vg-center <?php if ($table === $this->table) echo 'active'?>">
                         <div class="vg-element vg-half  vg-center">
                             <div>
-                                <img src="<?=PATH.ADMIN_TEMPLATE?>img/<?=$item['img'] ?: 'pages.png'?>" alt="pages">
+                                <img src="<?=PATH.ADMIN_TEMPLATE?>img/<?= !empty($item['img']) ? $item['img'] : 'pages.png'?>" alt="pages">
                             </div>
                         </div>
                         <div class="vg-element vg-half vg-center vg_hidden">

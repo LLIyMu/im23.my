@@ -165,7 +165,7 @@ class Model extends BaseModel
 			
 			$fields[] = $columns['id_row'] . ' as id';
 			
-			$fieldName = isset($columns['name']) ? "CASE WHEN name <> '' THEN name ": '';
+			$fieldName = isset($columns['name']) ? "CASE WHEN {$table}.name <> '' THEN {$table}.name ": '';
 			
 			foreach($columns as $col => $val){
 				
@@ -173,7 +173,7 @@ class Model extends BaseModel
 					
 					if(!$fieldName) $fieldName = 'CASE ';
 					
-					$fieldName .= "WHEN $col <> '' THEN $col ";
+					$fieldName .= "WHEN {$table}.$col <> '' THEN {$table}.$col ";
 					
 				}
 				
@@ -209,16 +209,14 @@ class Model extends BaseModel
             if ($where){
 
                 $this->buildUnion($table, [
-					'fields' => $fields,
-	                'where' => $where,
-	                'no_concat' => true
+                    'fields' => $fields,
+                    'where' => $where,
+                    'no_concat' => true
                 ]);
 
             }
 		
 		}
-		
-		$this->test();
 
         $orderDirection = '';
 
@@ -231,11 +229,26 @@ class Model extends BaseModel
         }
 
         $result = $this->getUnion([
-            //'type' => 'all'
-            //'pagination' => []
+            //'type' => 'all',
+            //'pagination' => [],
+            //'limit' => 3,
             'order' => $order,
             'order_direction' => $orderDirection
         ]);
+
+        if ($result){
+
+            foreach ($result as $index => $item){
+
+                $result[$index]['name'] .= '(' . (isset($projectTables[$item['table_name']]['name']) ? $projectTables[$item['table_name']]['name'] : $item['table_name']) . ')';
+
+                $result[$index]['alias'] = PATH . Settings::get('routes')['admin']['alias'] . '/edit/' . $item['table_name'] . '/' . $item['id'];
+
+            }
+
+        }
+
+        return $result ?: [];
 
     }
 	
@@ -273,7 +286,7 @@ class Model extends BaseModel
 
                         if (isset($columns[$row])){
 
-                            $where .= "$row LIKE '%$item%' OR ";
+                            $where .= "{$table}.$row LIKE '%$item%' OR ";
 
                         }
 

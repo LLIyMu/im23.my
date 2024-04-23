@@ -53,6 +53,7 @@ abstract class BaseController
 	}
 	
 	public function request($args){
+
 		$this->parameters = $args['parameters'];
 		
 		$inputData = $args['inputMethod'];
@@ -100,7 +101,7 @@ abstract class BaseController
 		
 		ob_start();
 		
-		if(!@include_once $path . '.php') throw new RouteException('Отсутствует шаблон - ' . $path);
+		if(!include $path . '.php') throw new RouteException('Отсутствует шаблон - ' . $path);
 		
 		return ob_get_clean();
 		

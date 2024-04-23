@@ -331,6 +331,109 @@ abstract class BaseModel
             return false;
 
         $unionType = ' UNION ' . (!empty($set['type']) ? strtoupper($set['type']) . ' ' : '');
+
+        $maxCount = 0;
+
+        $maxTableCount = '';
+
+        foreach ($this->union as $key => $item){
+
+            $count = count($item['fields']);
+
+            $joinFields = '';
+
+            if (!empty($item['join'])){
+
+                foreach ($item['join'] as $table => $data){
+
+                    if (array_key_exists('fields', $data) && $data['fields']){
+
+                        $count += count($data['fields']);
+
+                        $joinFields = $table;
+
+                    }elseif (!array_key_exists('fields', $data) || (!$joinFields[$data] || $data['fields'] === null)){
+
+                        $columns = $this->showColumns($table);
+
+                        unset($columns['id_row'], $columns['multi_id_row']);
+
+                        $count += count($columns);
+
+                        foreach ($columns as $field => $value)
+                            $this->union[$key]['join'][$table]['fields'][] = $field;
+
+                        $joinFields = $table;
+
+                    }
+
+                }
+
+            }else{
+
+                $this->union[$key]['no_concat'] = true;
+
+            }
+
+            if ($count > $maxCount || ($count === $maxCount && $joinFields)){
+
+                $maxCount = $count;
+
+                $maxTableCount = $key;
+
+            }
+
+            $this->union[$key]['lastJoinTable'] = $joinFields;
+
+            $this->union[$key]['countFields'] = $count;
+
+        }
+
+        $query = '';
+
+        if ($maxCount && $maxTableCount){
+
+            $query .= '(' . $this->get($maxTableCount, $this->union[$maxTableCount]) . ')';
+
+            unset($this->union[$maxTableCount]);
+
+        }
+
+        foreach ($this->union as $key => $item){
+
+            if (isset($item['countFields']) && $item['countFields'] < $maxCount){
+
+                for ($i = 0; $i < $maxCount - $item['countFields']; $i++){
+
+                    if ($item['lastJoinTable']){
+                        $item['join'][$item['lastJoinTable']]['fields'][] = null;
+                    } else{
+                        $item['fields'][] = null;
+                    }
+
+                }
+
+            }
+
+            $query && $query .= $unionType;
+
+            $query .= '(' . $this->get($key, $item) . ')';
+
+        }
+
+        $order = $this->createOrder($set);
+
+        $limit = !empty($set['limit']) ? 'LIMIT ' . $set['limit'] : '';
+
+        if (method_exists($this, 'createPagination'))
+            $this->createPagination($set, "($query)", $limit);
+
+        $query .= " $order $limit";
+
+        $this->union = [];
+
+        return $this->query((trim($query)));
+
     }
 	final public function showColumns($table){
 
@@ -404,6 +507,32 @@ abstract class BaseModel
         }
 
         return $table_arr;
+
+    }
+
+    public function changeCollation($collation = 'utf8mb4_unicode_ci'){
+
+        foreach ($this->showTables() as $table){
+
+            $columns = $this->showColumns($table);
+
+                foreach ($columns as $field){
+                    if(is_array($field) && !empty($field['Collation']) && $field['Collation'] !== $collation){
+
+                        $null = !isset($field['Null']) || strtoupper($field['Null']) === 'YES' ? "NULL" : "NOT NULL";
+                        $default = $null !== "NULL" ? '' : 'DEFAULT ' . (!isset($field['Default']) ? "NULL" : (is_string($field['Default']) ? "'" . $field['Default'] . "'" : $field['Default']));
+
+                        $sql = "ALTER TABLE $table
+                                    CHANGE {$field['Field']} {$field['Field']} {$field['Type']} CHARACTER SET utf8mb4 
+                                        COLLATE $collation $null $default";
+
+                        $this->query($sql, 'u');
+
+                }
+
+            }
+
+        }
 
     }
 	

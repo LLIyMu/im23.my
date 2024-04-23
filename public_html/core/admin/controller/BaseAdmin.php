@@ -52,6 +52,15 @@ abstract class BaseAdmin extends BaseController
         if (!$this->menu) $this->menu = Settings::get('projectTables');
         if (!$this->adminPath) $this->adminPath = PATH . Settings::get('routes')['admin']['alias'] . '/';
 
+        if(!$this->table){
+            if($this->parameters) $this->table = array_keys($this->parameters)[0];
+            elseif ($this->isPost() && $_POST['table']) $this->table = $_POST['table'];
+            else{
+                $this->table = Settings::get('defaultTable');
+            }
+
+        }
+
         if (!$this->templateArr) $this->templateArr = Settings::get('templateArr');
         if (!$this->formTemplates) $this->formTemplates = Settings::get('formTemplates');
 

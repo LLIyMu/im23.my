@@ -13,7 +13,7 @@
     <?php if (isset($this->data)):?>
         <?php foreach ($this->data as $data):?>
             <div class="vg-element vg-fourth">
-                <a href="<?=$this->adminPath?>edit/<?=$this->table?>/<?=$data['id']?>"
+                <a href="<?=!empty($data['alias']) ? $data['alias'] : $this->adminPath . 'edit/' . $this->table .'/' . $data['id']?>"
                    class="vg-wrap vg-element vg-full vg-firm-background-color4 vg-box-shadow show_element">
                     <div class="vg-element vg-half vg-center">
                         <?php if (isset($data['img'])):?>

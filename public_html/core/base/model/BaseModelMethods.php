@@ -69,7 +69,15 @@ trait BaseModelMethods
                     $id_field = true;
                 }
 
-                if (!empty($field)){
+                if ($field || $field === null){
+
+                    if ($field === null){
+
+                        $fields .= "NULL,";
+
+                        continue;
+
+                    }
 
                     if ($join && $join_structure){
 
@@ -85,7 +93,7 @@ trait BaseModelMethods
 
                     }else{
 
-                        $fields .= $concat_table . $field . ',';
+                        $fields .= (!preg_match('/(\([^()]*\))|(case\s+.+?\s+end)/i', $field) ? $concat_table : '') . $field . ',';
 
                     }
 

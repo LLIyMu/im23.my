@@ -1,0 +1,20 @@
+fault: 17-04-2024 7:39:13 - Не верное имя файла - core/admin/controller/SearchController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 40
+
+fault: 17-04-2024 7:46:22 - Не верное имя файла - core/admin/controller/SearchController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 40
+
+fault: 17-04-2024 7:46:43 - Не верное имя файла - core/admin/controller/SearchController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 40
+
+fault: 18-04-2024 4:49:33 - Отсутствует шаблон - core/admin/views/search
+file F:\OSPanel\domains\im23.my\public_html\core\base\controller\BaseController.php
+In line 103
+
+fault: 18-04-2024 4:51:03 - Отсутствует шаблон - core/admin/views/search
+file F:\OSPanel\domains\im23.my\public_html\core\base\controller\BaseController.php
+In line 103
+
