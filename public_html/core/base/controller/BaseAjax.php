@@ -15,7 +15,7 @@ class BaseAjax extends BaseController
 
         $data = $this->isPost() ? $_POST : $_GET;
 
-        if (!empty($data['ajax']) && $data['ajax'] === ' token'){
+        if (!empty($data['ajax']) && $data['ajax'] === 'token'){
 
             return $this->generateToken();
 

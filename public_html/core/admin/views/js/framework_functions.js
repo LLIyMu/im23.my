@@ -104,7 +104,7 @@ const Ajax = (set) => {
         }
 
         xhr.send(body);
-
+        console.log(body)
     });
 
 }

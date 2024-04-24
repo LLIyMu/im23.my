@@ -13,7 +13,7 @@ class UserModel extends BaseModel
 
     private $coockieName = 'identifier';
 
-    private $coockieAdminName = 'identifier';
+    private $coockieAdminName = 'AGService';
 
     private $userData = [];
 

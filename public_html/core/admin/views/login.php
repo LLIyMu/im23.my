@@ -77,20 +77,19 @@
 
         if (form){
             form.addEventListener('submit', e => {
+
                 if (e.isTrusted){
 
-                    //e.preventDefault();
+                    e.preventDefault()
 
                     Ajax({data:{ajax:'token'}}).then(res => {
 
                         if (res){
-                            console.log(res)
-                            form.insertAdjacentHTML('beforeend', `<input type="hidden" name="token" value='${res}'>`);
 
-                            console.log(form)
-                            form.submit()
-                            
+                            form.insertAdjacentHTML('beforeend', `<input type="hidden" name="token" value="${res}">`);
+
                         }
+                        form.submit()
 
                     })
                 }
