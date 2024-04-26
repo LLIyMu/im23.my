@@ -8,30 +8,15 @@ use core\base\controller\BaseController;
 class IndexController extends BaseController{
 	
 	protected function inputData(){
+		
+		$this->init();
 
-        $model = Model::instance();
-
-        $res = $model->get('goods', [
-            'where' => ['id' => '12,13'],
-            'operand' => ['IN'],
-            'join' => [
-                'goods_filters' => [
-                    'fields' => null,
-                    'on' => ['id', 'goods_id']
-                ],
-                'filters f' => [
-                    'fields' => ['name as st_name', 'content'],
-                    'on' => ['parent_id' , 'id']
-                ],
-                'filters' => [
-                    'on' => ['parent_id', 'id']
-                ]
-            ],
-	        'join_structure' => true,
-//            'order' => ['id'],
-//            'order_direction' => ['DESC']
-        ]);
-        exit();
+		$header = $this->render(TEMPLATE . 'header');
+		$content = $this->render();
+		$footer = $this->render(TEMPLATE . 'footer');
+		
+		return $this->render(TEMPLATE . 'templater', compact('header', 'content', 'footer'));
+ 
 	}
 	
 }

@@ -44,6 +44,8 @@ abstract class BaseAdmin extends BaseController
 
         }
 
+        $this->checkAuth(true);
+
         $this->init(true);
 
         $this->title = 'My Engine';

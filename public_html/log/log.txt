@@ -18,3 +18,19 @@ fault: 18-04-2024 4:51:03 - Отсутствует шаблон - core/admin/vie
 file F:\OSPanel\domains\im23.my\public_html\core\base\controller\BaseController.php
 In line 103
 
+fault: 25-04-2024 5:30:16 - Не верное имя файла - core/user/controller/LoginController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 40
+
+fault: 25-04-2024 5:34:13 - Не верное имя файла - core/user/controller/LoginController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 40
+
+fault: 25-04-2024 10:05:36 - Отсутствует шаблон - templates/default/header.php
+file F:\OSPanel\domains\im23.my\public_html\core\base\controller\BaseController.php
+In line 105
+
+fault: 25-04-2024 10:09:30 - Class "core\user\controller\Division-internal.htmlController" does not exist
+file F:\OSPanel\domains\im23.my\public_html\core\base\controller\BaseController.php
+In line 51
+

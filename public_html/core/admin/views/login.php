@@ -89,7 +89,8 @@
                             form.insertAdjacentHTML('beforeend', `<input type="hidden" name="token" value="${res}">`);
 
                         }
-                        form.submit()
+                        form.dispatchEvent(new Event('submit'));
+                        //form.submit()
 
                     })
                 }

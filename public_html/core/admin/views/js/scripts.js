@@ -602,10 +602,8 @@ function createJsSortable(form) {
                         }
 
                     }
-                    console.log(res)
+
                     inputSorting.value = JSON.stringify(res);
-
-
 
                 }
 
@@ -613,10 +611,22 @@ function createJsSortable(form) {
 
         }
 
-
     }
-
-
 
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+
+    function hideMessages() {
+
+        document.querySelectorAll('.success, .error').forEach(item => item.remove())
+
+        //document.removeEventListener('click', hideMessages)
+
+    }
+
+    //document.addEventListener('click', hideMessages)
+
+    setTimeout(hideMessages, 1000*5)
+
+})

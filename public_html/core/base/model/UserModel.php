@@ -159,7 +159,7 @@ class UserModel extends BaseModel
 
     }
 
-    private function unPakage(){
+    private function unPackage(){
 
         if (empty($_COOKIE[$this->coockieName]))
             throw new AuthException('Отсутствует cookie пользователя');
