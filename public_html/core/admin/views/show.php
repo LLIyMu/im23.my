@@ -10,7 +10,7 @@
             </div>
         </a>
     </div>
-    <?php if (isset($this->data)):?>
+    <?php if (!empty($this->data)):?>
         <?php foreach ($this->data as $data):?>
             <div class="vg-element vg-fourth">
                 <a href="<?=!empty($data['alias']) ? $data['alias'] : $this->adminPath . 'edit/' . $this->table .'/' . $data['id']?>"

@@ -490,6 +490,9 @@ textarea {
     display: block;
     height: 300px;
 }
+.img_show:hover{
+    background: lightgray;
+}
 
 .mce-tinymce.mce-container.mce-panel, .tox-tinymce {
     width: 100%;

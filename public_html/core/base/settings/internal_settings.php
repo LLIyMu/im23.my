@@ -7,12 +7,14 @@ const TEMPLATE = 'templates/default/';
 const ADMIN_TEMPLATE = 'core/admin/views/';
 
 const UPLOAD_DIR = 'userfiles/';
+const DEFAULT_IMG_DIR = 'default_images';
 
 const COOKIE_VERSION = '1.0.0';
 const COOKIE_TIME = 60;
 const CRYPT_KEY = 'SDF*9879790SDDFsdf098098*&&^$%&^sdfsddsfsfDSFSF-SDF*9879790SDDFsdf098098*&&^$%&^sdfsddsfsfDSFSF-1';
 const BLOCK_TIME = 3;
 
+const END_SLASH = '/';
 const QTY = 8;
 const QTY_LINKS = 3;
 

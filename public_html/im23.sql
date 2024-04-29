@@ -59,7 +59,7 @@ CREATE TABLE `categories` (
 -- Дамп данных таблицы `categories`
 --
 
-INSERT INTO `categories` (`id`, `name`) VALUES
+INSERT INTO catalog (`id`, `name`) VALUES
 (1, 'Cat 1'),
 (2, 'Cat 2');
 
@@ -230,7 +230,7 @@ ALTER TABLE `articles`
 --
 -- Индексы таблицы `categories`
 --
-ALTER TABLE `categories`
+ALTER TABLE catalog
   ADD PRIMARY KEY (`id`);
 
 --
@@ -278,7 +278,7 @@ ALTER TABLE `articles`
 --
 -- AUTO_INCREMENT для таблицы `categories`
 --
-ALTER TABLE `categories`
+ALTER TABLE catalog
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -325,7 +325,7 @@ ALTER TABLE `filters`
 -- Ограничения внешнего ключа таблицы `goods`
 --
 ALTER TABLE `goods`
-  ADD CONSTRAINT `goods_categories_id_fk` FOREIGN KEY (`parent_id`) REFERENCES `categories` (`id`);
+  ADD CONSTRAINT `goods_categories_id_fk` FOREIGN KEY (`parent_id`) REFERENCES catalog (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -37,20 +37,45 @@ class Settings{
 	];
 
 	private $templateArr = [
-		'text' => ['name'],
-		'textarea' => ['content', 'keywords'],
-		'radio' => ['visible'],
+		'text' => ['name', 'phone', 'email', 'alias', 'external_alias'],
+		'textarea' => ['content', 'keywords', 'address', 'description'],
+		'radio' => ['visible', 'show_top_menu'],
 		'select' => ['menu_position', 'parent_id'],
 		'checkboxlist' => ['filters'],
 		'img' => ['img', 'main_img'],
-		'gallery_img' => ['gallery_img']
+		'gallery_img' => ['gallery_img'],
+
 	];
+
+    //пункты меню админ панели
+    private $projectTables = [
+        'catalog' => ['name' => 'Каталог'],
+        'articles' => ['name' => 'Статьи'],
+        'pages' => ['name' => 'Страницы'],
+        'goods' => ['name' => 'Товары', 'img' => 'pages.png'],
+        'information' => ['name' => 'Информация'],
+        'socials' => ['name' => 'Социальные сети'],
+        'settings' => ['name' => 'Настройки системы'],
+
+    ];
 
     private $fileTemplates = ['img', 'gallery_img'];
 
     private $translate = [
         'name' => ['Название', 'Не более 100 символов'],
         'keywords' => ['Ключевые слова', 'Не более 70 символов'],
+	    'content' => ['Описание'],
+	    'description' => ['SEO описание'],
+	    'phone' => ['Телефон'],
+	    'email' => ['Email'],
+	    'address' => ['Адрес'],
+        'alias' => ['Ссылка ЧПУ'],
+        'show_top_menu' => ['Показывать в верхнем меню'],
+        'external_alias' => ['Внешняя ссылка'],
+        'img' => ['Изображение'],
+        'gallery_img' => ['Галерея изображений'],
+        'visible' => ['Показывать на сайте'],
+        'menu_position' => ['Позиция в меню']
     ];
     //разделитель блоков вёрстки
     private $blockSeparator = [
@@ -71,20 +96,14 @@ class Settings{
         'keywords' => ['count' => 70, 'trim' => true],
         'description' => ['count' => 160, 'trim' => true]
     ];
-    //пункты меню
-    private $projectTables = [
-        'articles' => ['name' => 'Статьи'],
-        'pages' => ['name' => 'Страницы'],
-        'goods' => ['name' => 'Товары', 'img' => 'pages.png'],
-        'filters' => ['name' => 'Фильтры'],
-    ];
 
     private $radio = [
-        'visible' => ['Нет', 'Да', 'default' => 'Да']
+        'visible' => ['Нет', 'Да', 'default' => 'Да'],
+        'show_top_menu' => ['Нет', 'Да', 'default' => 'Да'],
     ];
     private $rootItems = [
         'name' => 'Корневая',
-        'tables' => ['articles', 'filters']
+        'tables' => ['articles', 'filters', 'catalog']
     ];
     private $defaultTable = 'goods';
     private $expansion = 'core/admin/expansion/';
