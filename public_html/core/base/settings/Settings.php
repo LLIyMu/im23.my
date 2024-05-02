@@ -44,11 +44,11 @@ class Settings{
         'articles' => ['name' => 'Статьи'],
         'sales' => ['name' => 'Акции'],
         'pages' => ['name' => 'Страницы'],
-
+        'news' => ['name' => 'Новости'],
         'information' => ['name' => 'Информация'],
+        'advantages' => ['name' => 'Преимущества'],
         'socials' => ['name' => 'Социальные сети'],
         'settings' => ['name' => 'Настройки системы'],
-
     ];
 
     private $templateArr = [
@@ -57,7 +57,7 @@ class Settings{
         'radio' => ['visible', 'show_top_menu', 'hit', 'sale', 'new', 'hot'],
         'select' => ['menu_position', 'parent_id'],
         'checkboxlist' => ['filters'],
-        'img' => ['img', 'main_img', 'img_years'],
+        'img' => ['img', 'main_img', 'img_years', 'promo_img'],
         'gallery_img' => ['gallery_img'],
 
     ];
@@ -77,6 +77,7 @@ class Settings{
         'external_alias' => ['Внешняя ссылка'],
         'img' => ['Изображение'],
         'gallery_img' => ['Галерея изображений'],
+        'promo_img' => ['Изображение для главной страницы'],
         'visible' => ['Показывать на сайте'],
         'menu_position' => ['Позиция в меню'],
         'sub_title' => ['Подзаголовок'],
@@ -94,7 +95,7 @@ class Settings{
     //разделитель блоков вёрстки
     private $blockSeparator = [
         'left-block' => [],
-        'right-block' => ['img','main_img','img_years','number_of_years'],
+        'right-block' => ['img','main_img','img_years','number_of_years', 'promo_img'],
         'content-block' => ['content'],
     ];
 

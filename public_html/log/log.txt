@@ -10,3 +10,15 @@ fault: 02-05-2024 5:13:04 - Отсутствует шаблон - templates/defa
 file F:\OSPanel\domains\im23.my\public_html\core\base\controller\BaseController.php
 In line 105
 
+fault: 02-05-2024 8:41:46 - Не верное имя файла - core/user/controller/InformationController для подключения
+file C:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 67
+
+fault: 02-05-2024 9:56:15 - Не верное имя файла - core/user/controller/AboutController для подключения
+file C:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 67
+
+fault: 02-05-2024 12:52:45 - Отсутствует шаблон - templates/default/include/Array
+file C:\OSPanel\domains\im23.my\public_html\core\base\controller\BaseController.php
+In line 105
+
