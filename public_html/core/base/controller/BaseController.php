@@ -117,7 +117,7 @@ abstract class BaseController
 		}else{
 			echo $this->page;
 		}
-		exit();
+		exit;
 		
 	}
 	

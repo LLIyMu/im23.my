@@ -76,7 +76,7 @@ abstract class BaseAdmin extends BaseController
 
         if (!$this->content){
             $args = func_get_arg(0);
-            $vars = isset($args) ? : [];
+            $vars = $args ?? [];
 
             //if (!$this->template) $this->template = ADMIN_TEMPLATE . 'show';
 
@@ -1140,7 +1140,7 @@ abstract class BaseAdmin extends BaseController
 
                         if ((!empty($this->fileArray[$key]) && is_array($this->fileArray[$key])) || !empty($_POST['js-sorting'][$key])){
 
-                            $fileArr = json_decode($item);
+                            $fileArr = json_decode($item ?? '');
 
                             if ($fileArr){
 

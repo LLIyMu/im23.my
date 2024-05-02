@@ -493,6 +493,9 @@ textarea {
 .img_show:hover{
     background: lightgray;
 }
+.main_img_show{
+    min-width: 100px;
+}
 
 .mce-tinymce.mce-container.mce-panel, .tox-tinymce {
     width: 100%;

@@ -10,7 +10,46 @@ class IndexController extends BaseUser {
 
         parent::inputData();
 
-        
+        $sales = $this->model->get('sales', [
+            'where' => ['visible' => 1],
+            'order' => ['menu_position']
+        ]);
+
+        $arrHits = [
+            'hit' => [
+                'name' => 'Хиты продаж',
+                'icon' => '<svg>
+						<use xlink:href="'. PATH .TEMPLATE .'assets/img/icons.svg#hit"></use>
+					</svg>'
+            ],
+            'hot' => [
+                'name' => 'Горячее предложение',
+                'icon' => '<svg>
+						<use xlink:href="'. PATH .TEMPLATE .'assets/img/icons.svg#hot"></use>
+					</svg>'
+            ],
+            'sale' => [
+                'name' => 'Распродажа',
+                'icon' => '%'
+            ],
+            'new' => [
+                'name' => 'Новинки',
+                'icon' => 'new'
+            ],
+        ];
+
+        $goods = [];
+
+        foreach ($arrHits as $type => $item){
+
+            $goods[$type] = $this->model->getGoods([
+                'where' => [$type => 1, 'visible' => 1],
+                'limit' => 6
+            ]);
+
+        }
+
+        return compact('sales', 'arrHits', 'goods');
 
 	}
 	

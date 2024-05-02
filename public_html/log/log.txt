@@ -1,60 +1,12 @@
-fault: 17-04-2024 7:39:13 - Не верное имя файла - core/admin/controller/SearchController для подключения
+fault: 01-05-2024 16:21:39 - Не верное имя файла - core/user/controller/CatalogController для подключения
 file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
-In line 40
+In line 67
 
-fault: 17-04-2024 7:46:22 - Не верное имя файла - core/admin/controller/SearchController для подключения
-file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
-In line 40
-
-fault: 17-04-2024 7:46:43 - Не верное имя файла - core/admin/controller/SearchController для подключения
-file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
-In line 40
-
-fault: 18-04-2024 4:49:33 - Отсутствует шаблон - core/admin/views/search
-file F:\OSPanel\domains\im23.my\public_html\core\base\controller\BaseController.php
-In line 103
-
-fault: 18-04-2024 4:51:03 - Отсутствует шаблон - core/admin/views/search
-file F:\OSPanel\domains\im23.my\public_html\core\base\controller\BaseController.php
-In line 103
-
-fault: 25-04-2024 5:30:16 - Не верное имя файла - core/user/controller/LoginController для подключения
-file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
-In line 40
-
-fault: 25-04-2024 5:34:13 - Не верное имя файла - core/user/controller/LoginController для подключения
-file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
-In line 40
-
-fault: 25-04-2024 10:05:36 - Отсутствует шаблон - templates/default/header.php
+fault: 02-05-2024 5:13:00 - Отсутствует шаблон - templates/default/include/goodsItemArray
 file F:\OSPanel\domains\im23.my\public_html\core\base\controller\BaseController.php
 In line 105
 
-fault: 25-04-2024 10:09:30 - Class "core\user\controller\Division-internal.htmlController" does not exist
+fault: 02-05-2024 5:13:04 - Отсутствует шаблон - templates/default/include/goodsItemArray
 file F:\OSPanel\domains\im23.my\public_html\core\base\controller\BaseController.php
-In line 51
-
-fault: 28-04-2024 17:37:02 - Не верное имя файла - core/user/controller/CatalogController для подключения
-file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
-In line 67
-
-fault: 28-04-2024 17:37:09 - Не верное имя файла - core/user/controller/InformationController для подключения
-file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
-In line 67
-
-fault: 28-04-2024 17:37:13 - Не верное имя файла - core/user/controller/NewsController для подключения
-file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
-In line 67
-
-fault: 28-04-2024 17:37:18 - Не верное имя файла - core/user/controller/ContactsController для подключения
-file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
-In line 67
-
-fault: 28-04-2024 17:37:35 - Не верное имя файла - core/user/controller/CatalogController для подключения
-file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
-In line 67
-
-fault: 28-04-2024 18:44:17 - Не верное имя файла - core/user/controller/InformationController для подключения
-file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
-In line 67
+In line 105
 

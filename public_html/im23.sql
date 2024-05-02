@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 23 2024 г., 12:04
+-- Время создания: Май 02 2024 г., 06:32
 -- Версия сервера: 5.7.39-log
 -- Версия PHP: 8.1.9
 
@@ -41,27 +41,47 @@ CREATE TABLE `articles` (
 
 INSERT INTO `articles` (`id`, `name`, `parent_id`, `menu_position`, `content`) VALUES
 (1, 'art 1', NULL, 1, 'test'),
-(2, 'test', NULL, 2, NULL),
-(3, 'art 3', NULL, 3, NULL);
+(3, 'art 3', NULL, 2, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `categories`
+-- Структура таблицы `blocked_access`
 --
 
-CREATE TABLE `categories` (
+CREATE TABLE `blocked_access` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL
+  `login` varchar(255) DEFAULT NULL,
+  `ip` varchar(32) DEFAULT NULL,
+  `trying` tinyint(1) DEFAULT NULL,
+  `time` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `catalog`
+--
+
+CREATE TABLE `catalog` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `keywords` varchar(400) DEFAULT NULL,
+  `description` varchar(400) DEFAULT NULL,
+  `alias` varchar(255) DEFAULT NULL,
+  `img` varchar(255) DEFAULT NULL,
+  `visible` tinyint(1) DEFAULT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `menu_position` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `categories`
+-- Дамп данных таблицы `catalog`
 --
 
-INSERT INTO catalog (`id`, `name`) VALUES
-(1, 'Cat 1'),
-(2, 'Cat 2');
+INSERT INTO `catalog` (`id`, `name`, `keywords`, `description`, `alias`, `img`, `visible`, `parent_id`, `menu_position`) VALUES
+(1, 'Cat 1', '', '', 'cat-1', NULL, 1, NULL, 2),
+(2, 'Cat 2', '', '', 'cat-2', NULL, 1, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -74,26 +94,27 @@ CREATE TABLE `filters` (
   `name` varchar(255) NOT NULL,
   `content` text,
   `parent_id` int(11) DEFAULT NULL,
-  `menu_position` int(11) DEFAULT NULL
+  `menu_position` int(11) DEFAULT NULL,
+  `visible` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `filters`
 --
 
-INSERT INTO `filters` (`id`, `name`, `content`, `parent_id`, `menu_position`) VALUES
-(9, 'red', 'content - 0', 17, 1),
-(10, 'green', 'content - 1', 17, 2),
-(11, '200', NULL, 18, 1),
-(12, '300', NULL, 18, 2),
-(15, '400', NULL, 18, 3),
-(16, 'light-red', NULL, 17, 3),
-(17, 'Color', NULL, NULL, 3),
-(18, 'Width', NULL, NULL, 4),
-(21, 'Height', '', NULL, 4),
-(22, '1 px', '', 21, 2),
-(25, '2px', '', 21, 1),
-(26, '3px', '', 21, 3);
+INSERT INTO `filters` (`id`, `name`, `content`, `parent_id`, `menu_position`, `visible`) VALUES
+(9, 'red', 'content - 0', 17, 1, 1),
+(10, 'green', 'content - 1', 17, 2, 1),
+(11, '200', NULL, 18, 1, 1),
+(12, '300', NULL, 18, 2, 1),
+(15, '400', NULL, 18, 3, 1),
+(16, 'light-red', NULL, 17, 3, 1),
+(17, 'Color', NULL, NULL, 3, 1),
+(18, 'Width', NULL, NULL, 4, 1),
+(21, 'Height', '', NULL, 4, 1),
+(22, '1 px', '', 21, 2, 1),
+(25, '2px', '', 21, 1, 1),
+(26, '3px', '', 21, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -133,16 +154,25 @@ CREATE TABLE `goods` (
   `datetime` datetime DEFAULT NULL,
   `alias` varchar(255) DEFAULT NULL,
   `main_img` varchar(255) DEFAULT NULL,
-  `parent_id` int(11) DEFAULT NULL
+  `parent_id` int(11) DEFAULT NULL,
+  `price` float DEFAULT '0',
+  `hit` int(11) DEFAULT '0',
+  `sale` int(11) DEFAULT '0',
+  `new` int(11) DEFAULT '0',
+  `hot` int(11) DEFAULT '0',
+  `discount` int(11) DEFAULT '0',
+  `short_content` varchar(400) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `goods`
 --
 
-INSERT INTO `goods` (`id`, `name`, `content`, `img`, `gallery_img`, `menu_position`, `visible`, `keywords`, `date`, `datetime`, `alias`, `main_img`, `parent_id`) VALUES
-(21, 'test', '<p><img title=\"orig (1).webp\" src=\"/userfiles/goods/content_file/orig-1webp.webp\" alt=\"\" width=\"500\" height=\"499\" /></p>', '2.jpg', '[\"frame-19.jpg\",\"img20230426183137.jpg\",\"frame-25.jpg\"]', 2, 1, 'dwd', '2024-04-11', '2024-04-11 04:59:36', 'good-3', 'frame-31_3230bbc4.png', 1),
-(22, 'test imge', '', 'goods/orig-1.webp', '{\"0\":\"frame-22.jpg\",\"2\":\"frame-23.jpg\"}', 1, 1, '', '2024-04-11', '2024-04-11 04:44:05', 'test-imge', NULL, 2);
+INSERT INTO `goods` (`id`, `name`, `content`, `img`, `gallery_img`, `menu_position`, `visible`, `keywords`, `date`, `datetime`, `alias`, `main_img`, `parent_id`, `price`, `hit`, `sale`, `new`, `hot`, `discount`, `short_content`) VALUES
+(21, 'test', '<p><img title=\"orig (1).webp\" src=\"/userfiles/goods/content_file/orig-1webp.webp\" alt=\"\" width=\"500\" height=\"499\" /></p>', '2.jpg', '[\"frame-19.jpg\",\"img20230426183137.jpg\",\"frame-25.jpg\"]', 1, 1, 'dwd', '2024-05-02', '2024-05-02 05:29:50', 'test', 'frame-31_3230bbc4.png', 1, 15, 1, 1, 0, 0, 5, 'Какое то описание'),
+(22, 'test imge', '', 'goods/orig-1.webp', '[\"frame-22.jpg\",\"frame-23.jpg\"]', 3, 1, '', '2024-05-01', '2024-05-01 08:43:41', 'test-imge', NULL, 2, 25, 0, 0, 1, 0, 0, NULL),
+(23, 'Digitronic', '<p>Фильтр гбо</p>', 'goods/frame-31.png', '[\"goods\\/frame-31_9277aa53.png\",\"goods\\/frame-27.png\",\"goods\\/frame-29.png\",\"goods\\/frame-28.png\",\"goods\\/frame-27_7f256d3f.png\",\"goods\\/frame-28_8ae5d128.png\",\"goods\\/frame-29_62b5c883.png\"]', 2, 1, '', '2024-05-01', '2024-05-01 08:44:38', 'digitronic', 'goods/filtr.png', 2, 30, 1, 0, 0, 0, 0, NULL),
+(24, 'Кофе', '', 'goods/1.jpg', '[\"goods\\/1_fd064095.jpg\",\"goods\\/2.jpg\",\"goods\\/3.jpg\"]', 1, 1, '', '2024-05-02', '2024-05-02 05:30:03', 'kofe', NULL, 2, 150, 0, 0, 0, 1, 50, 'Какое то описание опять');
 
 -- --------------------------------------------------------
 
@@ -160,10 +190,49 @@ CREATE TABLE `goods_filters` (
 --
 
 INSERT INTO `goods_filters` (`filters_id`, `goods_id`) VALUES
+(9, 24),
 (10, 21),
+(10, 22),
+(10, 23),
+(10, 24),
+(11, 23),
 (12, 21),
+(12, 22),
+(12, 24),
+(15, 24),
 (16, 21),
-(25, 21);
+(22, 22),
+(25, 21),
+(25, 22),
+(25, 24),
+(26, 22),
+(26, 23);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `information`
+--
+
+CREATE TABLE `information` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `alias` varchar(255) DEFAULT NULL,
+  `keywords` varchar(400) DEFAULT NULL,
+  `description` varchar(400) DEFAULT NULL,
+  `visible` tinyint(1) DEFAULT NULL,
+  `menu_position` int(11) DEFAULT NULL,
+  `show_top_menu` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `information`
+--
+
+INSERT INTO `information` (`id`, `name`, `alias`, `keywords`, `description`, `visible`, `menu_position`, `show_top_menu`) VALUES
+(1, 'Оплата и доставка', 'oplata-i-dostavka', '', '', 1, 2, 1),
+(2, 'Акции и скидки', 'aktsii-i-skidki', '', '', 1, 1, 1),
+(3, 'Политика конфиденциальности', 'politika-konfidentsialnosti', '', '', 1, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -177,25 +246,12 @@ CREATE TABLE `old_alias` (
   `table_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Структура таблицы `pages`
+-- Дамп данных таблицы `old_alias`
 --
 
-CREATE TABLE `pages` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `new_name` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Дамп данных таблицы `pages`
---
-
-INSERT INTO `pages` (`id`, `name`, `new_name`) VALUES
-(1, 'test', NULL),
-(2, 'page 2', NULL);
+INSERT INTO `old_alias` (`alias`, `table_name`, `table_id`) VALUES
+('good-3', 'goods', 21);
 
 -- --------------------------------------------------------
 
@@ -216,6 +272,102 @@ CREATE TABLE `parsing_data` (
 INSERT INTO `parsing_data` (`all_links`, `temp_links`, `bad_links`) VALUES
 ('', '', '');
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `sales`
+--
+
+CREATE TABLE `sales` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `sub_title` varchar(255) DEFAULT NULL,
+  `menu_position` int(11) DEFAULT NULL,
+  `visible` tinyint(1) DEFAULT NULL,
+  `img` varchar(255) DEFAULT NULL,
+  `external_alias` varchar(255) DEFAULT NULL,
+  `short_content` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `sales`
+--
+
+INSERT INTO `sales` (`id`, `name`, `sub_title`, `menu_position`, `visible`, `img`, `external_alias`, `short_content`) VALUES
+(1, 'Акция 1', 'Продажа', 1, 1, 'sales/1.jpg', '/catalog/autozapchasti', 'Мы что то продаём'),
+(2, 'Акция 2', 'Услуга', 2, 1, 'sales/4ehaqclh78m.jpg', '/catalog/usluga', 'Мы предлагаем услуги');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `settings`
+--
+
+CREATE TABLE `settings` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `keywords` varchar(400) DEFAULT NULL,
+  `description` varchar(400) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `img` varchar(255) DEFAULT NULL,
+  `address` varchar(400) DEFAULT NULL,
+  `img_years` varchar(255) DEFAULT NULL,
+  `number_of_years` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `settings`
+--
+
+INSERT INTO `settings` (`id`, `name`, `keywords`, `description`, `phone`, `email`, `img`, `address`, `img_years`, `number_of_years`) VALUES
+(1, 'АвтоЗапчасти', '', '', '8(951)9511119', 'pbc1@mail.ru', 'settings/logo.svg', 'г. Лысьва ул. Перовской д 26 Б', 'settings/15.svg', '15');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `socials`
+--
+
+CREATE TABLE `socials` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `img` varchar(255) DEFAULT NULL,
+  `external_alias` varchar(255) DEFAULT NULL,
+  `visible` tinyint(1) DEFAULT NULL,
+  `menu_position` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `socials`
+--
+
+INSERT INTO `socials` (`id`, `name`, `img`, `external_alias`, `visible`, `menu_position`) VALUES
+(1, 'VK', 'socials/1486147202-social-media-circled-network10_79475.png', 'https://vk.com', 1, 1),
+(2, 'instagramm', 'socials/1491580635-yumminkysocialmedia26_83102.png', 'https://instagramm.com', 1, 2),
+(3, 'youtube', 'socials/1486147197-social-media-circled-network04_79460.png', 'https://youtube.com', 1, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `login` varchar(255) DEFAULT NULL,
+  `password` varchar(32) DEFAULT NULL,
+  `credentials` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `login`, `password`, `credentials`) VALUES
+(1, 'admin', 'admin', '202cb962ac59075b964b07152d234b70', NULL);
+
 --
 -- Индексы сохранённых таблиц
 --
@@ -224,13 +376,18 @@ INSERT INTO `parsing_data` (`all_links`, `temp_links`, `bad_links`) VALUES
 -- Индексы таблицы `articles`
 --
 ALTER TABLE `articles`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `articles_pages_id_fk` (`parent_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `categories`
+-- Индексы таблицы `blocked_access`
 --
-ALTER TABLE catalog
+ALTER TABLE `blocked_access`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `catalog`
+--
+ALTER TABLE `catalog`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -260,9 +417,33 @@ ALTER TABLE `goods_filters`
   ADD PRIMARY KEY (`filters_id`,`goods_id`);
 
 --
--- Индексы таблицы `pages`
+-- Индексы таблицы `information`
 --
-ALTER TABLE `pages`
+ALTER TABLE `information`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `sales`
+--
+ALTER TABLE `sales`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `settings`
+--
+ALTER TABLE `settings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `socials`
+--
+ALTER TABLE `socials`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `users`
+--
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -276,9 +457,15 @@ ALTER TABLE `articles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `categories`
+-- AUTO_INCREMENT для таблицы `blocked_access`
 --
-ALTER TABLE catalog
+ALTER TABLE `blocked_access`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `catalog`
+--
+ALTER TABLE `catalog`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -297,23 +484,41 @@ ALTER TABLE `filters_categories`
 -- AUTO_INCREMENT для таблицы `goods`
 --
 ALTER TABLE `goods`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT для таблицы `pages`
+-- AUTO_INCREMENT для таблицы `information`
 --
-ALTER TABLE `pages`
+ALTER TABLE `information`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблицы `sales`
+--
+ALTER TABLE `sales`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `settings`
+--
+ALTER TABLE `settings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `socials`
+--
+ALTER TABLE `socials`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблицы `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
-
---
--- Ограничения внешнего ключа таблицы `articles`
---
-ALTER TABLE `articles`
-  ADD CONSTRAINT `articles_pages_id_fk` FOREIGN KEY (`parent_id`) REFERENCES `pages` (`id`);
 
 --
 -- Ограничения внешнего ключа таблицы `filters`
@@ -325,7 +530,7 @@ ALTER TABLE `filters`
 -- Ограничения внешнего ключа таблицы `goods`
 --
 ALTER TABLE `goods`
-  ADD CONSTRAINT `goods_categories_id_fk` FOREIGN KEY (`parent_id`) REFERENCES catalog (`id`);
+  ADD CONSTRAINT `goods_categories_id_fk` FOREIGN KEY (`parent_id`) REFERENCES `catalog` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
