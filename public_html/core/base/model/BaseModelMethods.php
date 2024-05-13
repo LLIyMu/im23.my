@@ -5,6 +5,12 @@ namespace core\base\model;
 trait BaseModelMethods
 {
 	
+	protected $postNumber;
+	protected $linksNumber;
+	protected $numberPages;
+	protected $page;
+	protected $totalCount;
+	
 	protected $sqlFunc = ['NOW()', 'RAND()'];
 
     protected $tableRows;
@@ -550,6 +556,80 @@ trait BaseModelMethods
         }
 
         return $join_arr;
+
+    }
+	
+	protected function getTotalCount($table, $where){
+	
+		return $this->query("SELECT COUNT(*) as count FROM $table $where")[0]['count'];
+	
+	}
+
+    public function getPagination(){
+
+        if (!$this->numberPages || $this->numberPages === 1 || $this->page > $this->numberPages){
+
+            return false;
+
+        }
+
+        $res = [];
+
+        if ($this->page !== 1){
+
+            $res['first'] = 1;
+
+            $res['back'] = $this->page - 1;
+
+        }
+
+        if ($this->page > $this->linksNumber + 1){
+
+            for ($i = $this->page - $this->linksNumber; $i < $this->page; $i++){
+
+                $res['previous'][] = $i;
+
+            }
+
+        }else{
+
+            for ($i = 1; $i < $this->page; $i++){
+
+                $res['previous'][] = $i;
+
+            }
+
+        }
+
+        $res['current'] = $this->page;
+
+        if ($this->page + $this->linksNumber < $this->numberPages){
+
+            for ($i = $this->page + 1; $i <= $this->page + $this->linksNumber; $i++){
+
+                $res['next'][] = $i;
+
+            }
+
+        }else{
+
+            for ($i = $this->page + 1; $i <= $this->numberPages; $i++){
+
+                $res['next'][] = $i;
+
+            }
+
+        }
+
+        if ($this->page !== $this->numberPages){
+
+            $res['forward'] = $this->page + 1;
+
+            $res['last'] = $this->numberPages;
+
+        }
+
+        return $res;
 
     }
 

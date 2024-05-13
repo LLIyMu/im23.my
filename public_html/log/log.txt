@@ -22,3 +22,51 @@ fault: 02-05-2024 12:52:45 - Отсутствует шаблон - templates/def
 file C:\OSPanel\domains\im23.my\public_html\core\base\controller\BaseController.php
 In line 105
 
+fault: 08-05-2024 3:58:34 - Не верное имя файла - core/user/controller/NewsController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 67
+
+fault: 08-05-2024 3:58:39 - Не верное имя файла - core/user/controller/CatalogController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 67
+
+fault: 08-05-2024 4:07:42 - Не верное имя файла - core/user/controller/NewsController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 67
+
+fault: 08-05-2024 4:10:28 - Не верное имя файла - core/user/controller/NewsController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 67
+
+fault: 08-05-2024 4:36:44 - Не верное имя файла - core/user/controller/CatalogController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 67
+
+fault: 10-05-2024 13:47:51 - Не найдены записи в таблице catalog по ссылке catalog.html
+file F:\OSPanel\domains\im23.my\public_html\core\user\controller\CatalogController.php
+In line 30
+
+fault: 12-05-2024 19:12:18 - Не найдены записи в таблице catalog по ссылке autozapchasti
+file F:\OSPanel\domains\im23.my\public_html\core\user\controller\CatalogController.php
+In line 27
+
+fault: 12-05-2024 19:12:58 - Не найдены записи в таблице catalog по ссылке autozapchasti
+file F:\OSPanel\domains\im23.my\public_html\core\user\controller\CatalogController.php
+In line 27
+
+fault: 13-05-2024 3:55:18 - Не верное имя файла - core/user/controller/InformationController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 67
+
+fault: 13-05-2024 3:55:24 - Не верное имя файла - core/user/controller/InformationController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 67
+
+fault: 13-05-2024 3:55:28 - Не верное имя файла - core/user/controller/NewsController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 67
+
+fault: 13-05-2024 3:55:34 - Не верное имя файла - core/user/controller/ContactsController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 67
+

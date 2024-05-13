@@ -15,24 +15,16 @@ class RouteController extends BaseController
 	private function __construct(){
 	
 		$address_str = $_SERVER['REQUEST_URI'];
-
-        if (!empty($_SERVER['QUERY_STRING'])){
-            $address_str = substr($address_str, 0, strpos($address_str, $_SERVER['QUERY_STRING']) - 1);
-        }
 		
 		$path = substr($_SERVER['PHP_SELF'], 0, strpos($_SERVER['PHP_SELF'], 'index.php'));
 		
 		if($path === PATH){
-			
-			if(strrpos($address_str, '/') === strlen($address_str) - 1 && (strrpos($address_str, '/') !== strlen(PATH) - 1)){
-				$this->redirect(rtrim($address_str, '/'), 301);
-			}
 		
 			$this->routes = Settings::get('routes');
 			
 			if(!$this->routes) throw new RouteException('Отсутствуют маршруты в базовых настройках', 1);
 			
-			$url = explode('/', substr($address_str, strlen(PATH)));
+			$url = preg_split('/(\/)|(\?.*)/', $address_str, 0, PREG_SPLIT_NO_EMPTY);
 			
 			if($url[0] && $url[0] === $this->routes['admin']['alias']){
 				
@@ -73,6 +65,50 @@ class RouteController extends BaseController
 				}
 			
 			}else{
+
+                if (!$this->isPost()){
+
+                    $pattern = '';
+
+                    $replacement = '';
+
+                    if (END_SLASH){
+
+                        if (!preg_match('/\/(\?|$)/', $address_str)){
+
+                            $pattern = '/(^.*?)(\?.*)?$/';
+
+                            $replacement = '$1/';
+
+                        }
+
+                    }else{
+
+                        if (preg_match('/\/(\?|$)/', $address_str)){
+
+                            $pattern = '/(^.*?)\/(\?.*)?$/';
+
+                            $replacement = '$1';
+
+                        }
+
+                    }
+
+                    if ($pattern){
+
+                        $address_str = preg_replace($pattern, $replacement, $address_str);
+
+                        if (!empty($_SERVER['QUERY_STRING'])){
+
+                            $address_str .= '?' . $_SERVER['QUERY_STRING'];
+
+                        }
+
+                        $this->redirect($address_str, 301);
+
+                    }
+
+                }
 				
 				$hrUrl = $this->routes['user']['hrUrl'];
 				

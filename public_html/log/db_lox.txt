@@ -6,3 +6,7 @@ fault: 01-05-2024 5:34:58 - Ошибка в SQL запросе SELECT filters.*,
 file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
 In line 44
 
+fault: 07-05-2024 15:34:05 - Ошибка в SQL запросе SELECT settings.* FROM settings   ORDER BY settings.id ASC LIMIT 1 - 1146 Table 'im23.settings' doesn't exist
+file F:\OSPanel\domains\im23.my\public_html\core\base\model\BaseModel.php
+In line 44
+

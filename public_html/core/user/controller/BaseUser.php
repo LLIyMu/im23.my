@@ -16,6 +16,8 @@ abstract class BaseUser extends BaseController
 
     protected $menu;
 
+    protected $breadcrumbs;
+
     /*проектные свойства*/
     protected $socials;
     /*проектные свойства*/
@@ -52,9 +54,13 @@ abstract class BaseUser extends BaseController
     protected function outputData()
     {
 
+        $args = func_get_arg(0);
+        $vars = $args ?? [];
+
+        $this->breadcrumbs = $this->render(TEMPLATE . 'include/breadcrumbs');
+
         if (!$this->content){
-            $args = func_get_arg(0);
-            $vars = $args ?? [];
+
 
             //if (!$this->template) $this->template = ADMIN_TEMPLATE . 'show';
 
@@ -115,8 +121,8 @@ abstract class BaseUser extends BaseController
 
                         $key .= '[]';
 
-                        foreach ($item as $v)
-                            $str .= $key . '=' . $v;
+                        foreach ($item as $k => $v)
+                            $str .= $key . '=' . $v . (!empty($item[$k + 1]) ? '&' : '');
 
                     }else{
 
@@ -204,11 +210,49 @@ abstract class BaseUser extends BaseController
 
     }
 
-    protected function showGoods($data, $parameters, $template = 'goodsItem'){
+    protected function showGoods($data, $parameters = [], $template = 'goodsItem'){
 
         if (!empty($data)){
 
             echo $this->render(TEMPLATE . 'include/' . $template, compact('data', 'parameters'));
+
+        }
+
+    }
+
+    protected function pagination($pages){
+
+        $str = $_SERVER['REQUEST_URI'];
+
+        if (preg_match('/page=\d+/i', $str)){
+
+            $str = preg_replace('/page=\d+/i', '',$str);
+
+        }
+
+        if (preg_match('/(\?&)|(\?amp;)/i', $str)){
+
+            $str = preg_replace('/(\?&)|(\?amp;)/i', '',$str);
+
+        }
+
+        $basePageStr = $str;
+
+        if (preg_match('/\?(.)?/i', $str, $matches)){
+
+            if (!preg_match('/&$/', $str) && !empty($matches[1])){
+
+                $str .= '&';
+
+            }else{
+
+                $basePageStr = preg_replace('/(\?)|(&$)/', '', $str);
+
+            }
+
+        }else{
+
+            $str .= '?';
 
         }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 02 2024 г., 13:53
+-- Время создания: Май 07 2024 г., 17:56
 -- Версия сервера: 8.0.30
 -- Версия PHP: 8.1.9
 
@@ -53,11 +53,11 @@ INSERT INTO `advantages` (`id`, `name`, `img`, `menu_position`, `visible`) VALUE
 
 CREATE TABLE `articles` (
   `id` int NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `parent_id` int DEFAULT NULL,
   `menu_position` int DEFAULT NULL,
-  `content` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `articles`
@@ -75,11 +75,11 @@ INSERT INTO `articles` (`id`, `name`, `parent_id`, `menu_position`, `content`) V
 
 CREATE TABLE `blocked_access` (
   `id` int NOT NULL,
-  `login` varchar(255) DEFAULT NULL,
-  `ip` varchar(32) DEFAULT NULL,
+  `login` varchar(255) CHARACTER SET utf8mb3 DEFAULT NULL,
+  `ip` varchar(32) CHARACTER SET utf8mb3 DEFAULT NULL,
   `trying` tinyint(1) DEFAULT NULL,
   `time` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -89,15 +89,15 @@ CREATE TABLE `blocked_access` (
 
 CREATE TABLE `catalog` (
   `id` int NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `keywords` varchar(400) DEFAULT NULL,
-  `description` varchar(400) DEFAULT NULL,
-  `alias` varchar(255) DEFAULT NULL,
-  `img` varchar(255) DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `keywords` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `description` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `alias` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `visible` tinyint(1) DEFAULT NULL,
   `parent_id` int DEFAULT NULL,
   `menu_position` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `catalog`
@@ -115,12 +115,12 @@ INSERT INTO `catalog` (`id`, `name`, `keywords`, `description`, `alias`, `img`, 
 
 CREATE TABLE `filters` (
   `id` int NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `content` text,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `parent_id` int DEFAULT NULL,
   `menu_position` int DEFAULT NULL,
   `visible` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `filters`
@@ -148,8 +148,8 @@ INSERT INTO `filters` (`id`, `name`, `content`, `parent_id`, `menu_position`, `v
 
 CREATE TABLE `filters_categories` (
   `id` int NOT NULL,
-  `name` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `filters_categories`
@@ -167,17 +167,17 @@ INSERT INTO `filters_categories` (`id`, `name`) VALUES
 
 CREATE TABLE `goods` (
   `id` int NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `content` text,
-  `img` varchar(255) DEFAULT NULL,
-  `gallery_img` text,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `gallery_img` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `menu_position` int DEFAULT NULL,
   `visible` int DEFAULT NULL,
-  `keywords` varchar(255) DEFAULT NULL,
+  `keywords` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `date` date DEFAULT NULL,
   `datetime` datetime DEFAULT NULL,
-  `alias` varchar(255) DEFAULT NULL,
-  `main_img` varchar(255) DEFAULT NULL,
+  `alias` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `main_img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `parent_id` int DEFAULT NULL,
   `price` float DEFAULT '0',
   `hit` int DEFAULT '0',
@@ -185,8 +185,8 @@ CREATE TABLE `goods` (
   `new` int DEFAULT '0',
   `hot` int DEFAULT '0',
   `discount` int DEFAULT '0',
-  `short_content` varchar(400) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `short_content` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `goods`
@@ -207,7 +207,7 @@ INSERT INTO `goods` (`id`, `name`, `content`, `img`, `gallery_img`, `menu_positi
 CREATE TABLE `goods_filters` (
   `filters_id` int NOT NULL,
   `goods_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `goods_filters`
@@ -240,14 +240,14 @@ INSERT INTO `goods_filters` (`filters_id`, `goods_id`) VALUES
 
 CREATE TABLE `information` (
   `id` int NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `alias` varchar(255) DEFAULT NULL,
-  `keywords` varchar(400) DEFAULT NULL,
-  `description` varchar(400) DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `alias` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `keywords` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `description` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `visible` tinyint(1) DEFAULT NULL,
   `menu_position` int DEFAULT NULL,
   `show_top_menu` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `information`
@@ -291,10 +291,10 @@ INSERT INTO `news` (`id`, `name`, `date`, `short_content`, `content`, `visible`,
 --
 
 CREATE TABLE `old_alias` (
-  `alias` varchar(255) DEFAULT NULL,
-  `table_name` varchar(255) DEFAULT NULL,
+  `alias` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `table_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `table_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `old_alias`
@@ -310,10 +310,10 @@ INSERT INTO `old_alias` (`alias`, `table_name`, `table_id`) VALUES
 --
 
 CREATE TABLE `parsing_data` (
-  `all_links` longtext,
-  `temp_links` longtext,
-  `bad_links` longtext
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `all_links` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `temp_links` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `bad_links` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `parsing_data`
@@ -330,14 +330,14 @@ INSERT INTO `parsing_data` (`all_links`, `temp_links`, `bad_links`) VALUES
 
 CREATE TABLE `sales` (
   `id` int NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `sub_title` varchar(255) DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `sub_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `menu_position` int DEFAULT NULL,
   `visible` tinyint(1) DEFAULT NULL,
-  `img` varchar(255) DEFAULT NULL,
-  `external_alias` varchar(255) DEFAULT NULL,
-  `short_content` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `external_alias` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `short_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `sales`
@@ -355,19 +355,19 @@ INSERT INTO `sales` (`id`, `name`, `sub_title`, `menu_position`, `visible`, `img
 
 CREATE TABLE `settings` (
   `id` int NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `keywords` varchar(400) DEFAULT NULL,
-  `description` varchar(400) DEFAULT NULL,
-  `phone` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `img` varchar(255) DEFAULT NULL,
-  `address` varchar(400) DEFAULT NULL,
-  `img_years` varchar(255) DEFAULT NULL,
-  `number_of_years` varchar(255) DEFAULT NULL,
-  `content` text,
-  `short_content` text,
-  `promo_img` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `keywords` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `description` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `address` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `img_years` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `number_of_years` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `short_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `promo_img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `settings`
@@ -384,12 +384,12 @@ INSERT INTO `settings` (`id`, `name`, `keywords`, `description`, `phone`, `email
 
 CREATE TABLE `socials` (
   `id` int NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `img` varchar(255) DEFAULT NULL,
-  `external_alias` varchar(255) DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `img` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `external_alias` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `visible` tinyint(1) DEFAULT NULL,
   `menu_position` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `socials`
@@ -408,11 +408,11 @@ INSERT INTO `socials` (`id`, `name`, `img`, `external_alias`, `visible`, `menu_p
 
 CREATE TABLE `users` (
   `id` int NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `login` varchar(255) DEFAULT NULL,
-  `password` varchar(32) DEFAULT NULL,
-  `credentials` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `name` varchar(255) CHARACTER SET utf8mb3 DEFAULT NULL,
+  `login` varchar(255) CHARACTER SET utf8mb3 DEFAULT NULL,
+  `password` varchar(32) CHARACTER SET utf8mb3 DEFAULT NULL,
+  `credentials` text CHARACTER SET utf8mb3
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `users`
