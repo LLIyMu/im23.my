@@ -128,29 +128,38 @@
                             </div>
                         </div>
                     </div>
-                    <div class="catalog-section-pagination">
-                        <a href="catalog.html#" class="catalog-section-pagination__item catalog-section-pagination__prev">
 
-                        </a>
-                        <a href="catalog.html#" class="catalog-section-pagination__item">
-                            1
-                        </a>
-                        <a href="catalog.html#" class="catalog-section-pagination__item">
-                            2
-                        </a>
-                        <a href="catalog.html#" class="catalog-section-pagination__item">
-                            3
-                        </a>
-                        <a href="catalog.html#" class="catalog-section-pagination__item">
-                            4
-                        </a>
-                        <a href="catalog.html#" class="catalog-section-pagination__item">
-                            5
-                        </a>
-                        <a href="catalog.html#" class="catalog-section-pagination__item catalog-section-pagination__next">
+                    <?php if (!empty($pages)):?>
+                        <div class="catalog-section-pagination">
+                            <?php $this->pagination($pages)?>
 
-                        </a>
-                    </div>
+                            <a href="catalog.html#" class="catalog-section-pagination__item">
+                                <
+                            </a>
+                            <a href="catalog.html#" class="catalog-section-pagination__item">
+                                1
+                            </a>
+                            <a href="catalog.html#" class="catalog-section-pagination__item">
+                                2
+                            </a>
+                            <a href="catalog.html#" class="catalog-section-pagination__item">
+                                3
+                            </a>
+                            <a href="catalog.html#" class="catalog-section-pagination__item">
+                                4
+                            </a>
+                            <a href="catalog.html#" class="catalog-section-pagination__item">
+                                5
+                            </a>
+                            <a href="catalog.html#" class="catalog-section-pagination__item"><!--catalog-section-pagination__prev-->
+                                >
+                            </a>
+                            <a href="catalog.html#" class="catalog-section-pagination__item">
+                                >>
+                            </a>
+                        </div>
+                    <?php endif; ?>
+
                 </section>
             <?php endif;?>
         </div>

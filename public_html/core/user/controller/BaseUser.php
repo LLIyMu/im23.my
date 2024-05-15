@@ -256,6 +256,50 @@ abstract class BaseUser extends BaseController
 
         }
 
+        $str .= 'page=';
+
+        $firstPageStr = !empty($pages['first']) ? ($pages['first'] === 1 ? $basePageStr : $str . $pages['first']) : '';
+
+        $backPageStr = !empty($pages['back']) ? ($pages['back'] === 1 ? $basePageStr : $str . $pages['back']) : '';
+
+        if (!empty($pages['first'])){
+
+            echo <<<HEREDOC
+                            <a href="$firstPageStr" class="catalog-section-pagination__item">
+                                <<
+                            </a>
+HEREDOC;
+
+            
+        }
+
+        if (!empty($pages['back'])){
+
+            echo <<<HEREDOC
+                            <a href="$basePageStr" class="catalog-section-pagination__item">
+                                >>
+                            </a>
+HEREDOC;
+
+
+        }
+
+        if (!empty($pages['previous'])){
+
+            foreach ($pages['previous'] as $item){
+
+                $href = $str . $item;
+
+                echo <<<HEREDOC
+                            <a href="$href" class="catalog-section-pagination__item">
+                                $item;
+                            </a>
+HEREDOC;
+
+            }
+
+        }
+
     }
 
 }
