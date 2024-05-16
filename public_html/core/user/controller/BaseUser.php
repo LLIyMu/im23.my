@@ -277,7 +277,7 @@ HEREDOC;
 
             echo <<<HEREDOC
                             <a href="$basePageStr" class="catalog-section-pagination__item">
-                                >>
+                                <
                             </a>
 HEREDOC;
 
@@ -288,15 +288,68 @@ HEREDOC;
 
             foreach ($pages['previous'] as $item){
 
-                $href = $str . $item;
+                $href = $item === 1 ? $basePageStr : $str . $item;
 
                 echo <<<HEREDOC
                             <a href="$href" class="catalog-section-pagination__item">
-                                $item;
+                                $item
                             </a>
 HEREDOC;
 
             }
+
+        }
+
+        if (!empty($pages['current'])){
+
+            echo <<<HEREDOC
+                            <a href="" class="catalog-section-pagination__item pagination-current">
+                                {$pages['current']}
+                            </a>
+HEREDOC;
+
+
+        }
+
+        if (!empty($pages['next'])){
+
+            foreach ($pages['next'] as $item){
+
+                $href = $str . $item;
+
+                echo <<<HEREDOC
+                            <a href="$href" class="catalog-section-pagination__item">
+                                $item
+                            </a>
+HEREDOC;
+
+            }
+
+        }
+
+        if (!empty($pages['forward'])){
+
+            $href = $str . $pages['forward'];
+
+            echo <<<HEREDOC
+                            <a href="$href" class="catalog-section-pagination__item">
+                                >
+                            </a>
+HEREDOC;
+
+
+        }
+
+        if (!empty($pages['last'])){
+
+            $href = $str . $pages['last'];
+
+            echo <<<HEREDOC
+                            <a href="$href" class="catalog-section-pagination__item">
+                                >>
+                            </a>
+HEREDOC;
+
 
         }
 

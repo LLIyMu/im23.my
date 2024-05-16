@@ -55,7 +55,7 @@ class CatalogController extends BaseUser
             'order' => $orderDb['order'],
             'order_direction' => $orderDb['order_direction'],
 	        'pagination' => [
-		        'qty' => 1,
+		        'qty' => $_SESSION['quantities'] ?? QTY,
 		        'page' => $this->clearNum($_GET['page'] ?? 1) ?: 1
 	        ]
 	        //'pagination' => $this->clearNum($_GET['page'] ?? 1) ?: 1
