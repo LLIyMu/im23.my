@@ -70,3 +70,7 @@ fault: 13-05-2024 3:55:34 - Не верное имя файла - core/user/cont
 file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
 In line 67
 
+fault: 17-05-2024 4:20:29 - Отсутствует товар по ссылке test
+file F:\OSPanel\domains\im23.my\public_html\core\user\controller\ProductController.php
+In line 26
+

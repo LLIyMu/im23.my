@@ -221,3 +221,26 @@ $(function () {
 
     })
 });
+
+document.addEventListener('DOMContentLoaded', () =>{
+
+    let moreBtn = document.querySelector('.card-main-info__description .more-button')
+
+    if (moreBtn){
+
+        moreBtn.addEventListener('click', e => {
+
+            e.preventDefault();
+
+            document.querySelectorAll('.card-tabs__toggle.tabs__toggle')[1].dispatchEvent(new Event('click'))
+
+            window.scrollTo({
+                top: document.querySelector('.card-tabs').getBoundingClientRect().top + scrollY,
+                behavior: 'smooth'
+            })
+
+        })
+
+    }
+
+})

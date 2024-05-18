@@ -7,7 +7,7 @@ $mainClass = $parameters['mainClass'] ?? 'offers__tabs_card swiper-slide';
 $classPrefix = $parameters['prefix'] ?? 'offers';
 
 ?>
-    <div class="<?=$mainClass?>">
+    <a href="<?=$this->alias(['product' => $data['alias']])?>" class="<?=$mainClass?>" style="color: black; text-decoration: none">
         <div class="<?=$classPrefix?>__tabs_image">
             <img src="<?=$this->img($data['img'])?>" alt="<?=$data['name']?>">
         </div>
@@ -41,5 +41,5 @@ $classPrefix = $parameters['prefix'] ?? 'offers';
                 <?=$parameters['icon']?>
             </div>
         <?php endif; ?>
-    </div>
+    </a>
 <?php endif;?>
