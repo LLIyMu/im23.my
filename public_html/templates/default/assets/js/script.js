@@ -288,7 +288,45 @@ function addToCart() {
                     },
                     success: res => {
                         console.log(res)
+
+                        try {
+
+                            res = JSON.parse(res)
+
+                            console.log(res)
+
+                            if (typeof res.current === 'undefined'){
+
+                                throw new Error('')
+
+                            }
+
+                            item.setAttribute('data-toCartAdded', true);
+
+                            ['data-totalQty', 'data-totalSum', 'data-totalOldSum'].forEach(attr => {
+
+                                let cartAttr = attr.replace(/data-/, '').replace(/([^A-Z])([A-Z])/g, '$1_$2').toLowerCase()
+
+                                document.querySelectorAll(`[${attr}]`).forEach(el => {
+
+                                    if (typeof res[cartAttr] !== 'undefined'){
+
+                                        el.innerHTML = res[cartAttr];
+
+                                    }
+
+                                })
+
+                            })
+
+                        }catch (e){
+
+                            alert('Ошибка добавления в корзину')
+
+                        }
+
                     }
+
                 })
 
             }
@@ -322,7 +360,7 @@ function changeQty() {
 
                 }else {
 
-                    qty = qty <=1 ? 1 : --qty
+                    qty = qty <= 1 ? 1 : --qty
 
                 }
 
@@ -330,7 +368,7 @@ function changeQty() {
 
                 let addToCart = productContainer.querySelector('[data-addToCart]')
 
-                if (addToCart && addToCart.hasAttribute('[data-toCartAdded]')){
+                if (addToCart && addToCart.hasAttribute('data-toCartAdded')){
 
                     addToCart.dispatchEvent(new Event('click'))
 

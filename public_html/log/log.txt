@@ -78,3 +78,11 @@ fault: 19-05-2024 8:30:25 - Отсутствует ссылка на товар
 file F:\OSPanel\domains\im23.my\public_html\core\user\controller\ProductController.php
 In line 16
 
+fault: 21-05-2024 19:44:43 - Не верное имя файла - core/user/controller/CartController для подключения
+file F:\OSPanel\domains\im23.my\public_html\core\base\settings\internal_settings.php
+In line 69
+
+fault: 22-05-2024 4:42:46 - Отсутствует товар по ссылке test-imge
+file F:\OSPanel\domains\im23.my\public_html\core\user\controller\ProductController.php
+In line 26
+

@@ -39,6 +39,16 @@ class Model extends \core\base\model\BaseModel
 
         if ($goods){
 
+            if (!empty($this->showColumns('goods')['discount'])){
+
+                foreach ($goods as $key => $item){
+
+                    $this->applyDiscount($goods[$key], $item['discount']);
+
+                }
+
+            }
+
             unset($set['join'], $set['join_structure'], $set['pagination']);
 
             if ($catalogPrices !== false && !empty($this->showColumns('goods')['price'])){
@@ -109,16 +119,6 @@ class Model extends \core\base\model\BaseModel
                         ]
                     ]
                 ]);
-
-                if (!empty($this->showColumns('goods')['discount'])){
-
-                    foreach ($goods as $key => $item){
-
-                        $this->applyDiscount($goods[$key], $item['discount']);
-
-                    }
-
-                }
 
                 if ($filters){
 

@@ -16,6 +16,8 @@ abstract class BaseUser extends BaseController
 
     protected $menu;
 
+    protected $cart = [];
+
     protected $breadcrumbs;
 
     /*проектные свойства*/
@@ -31,6 +33,12 @@ abstract class BaseUser extends BaseController
 			'order' => ['id'],
 			'limit' => 1
 		]);
+
+        if (!$this->isAjax() && !$this->isPost()){
+
+            $this->getCartData();
+
+        }
 	    
 	    $this->set && $this->set = $this->set[0];
 
@@ -350,6 +358,200 @@ HEREDOC;
                             </a>
 HEREDOC;
 
+
+        }
+
+    }
+
+    protected function addToCart($id, $qty){
+
+        $id = $this->clearNum($id);
+
+        $qty = $this->clearNum($qty) ?: 1;
+
+        if (!$id){
+
+            return ['success' => 0, 'message' => 'Отсутствует идентификатор товара'];
+
+        }
+
+        $data = $this->model->get('goods', [
+            'where' => ['id' => $id, 'visible' => 1],
+            'limit' => 1
+        ]);
+
+        if (!$data){
+
+            return ['success' => 0, 'message' => 'Отсутствует товар для добавления в корзину'];
+
+        }
+
+        $cart = &$this->getCart();
+
+        $cart[$id] = $qty;
+
+        $this->updateCart();
+
+        $res = $this->getCartData(true);
+
+        if ($res && !empty($res['goods'][$id])){
+
+            $res['current'] = $res['goods'][$id];
+
+        }
+
+        return $res;
+
+    }
+
+    protected function getCartData($cartChanged = false){
+
+        if (!empty($this->cart) && !$cartChanged){
+
+            return $this->cart;
+
+        }
+
+        $cart = &$this->getCart();
+
+        if (empty($cart)){
+
+            $this->clearCart();
+
+            return false;
+
+        }
+
+        $goods = $this->model->getGoods([
+            'where' => ['id' => array_keys($cart), 'visible' => 1],
+            'operand' => ['IN', '=']
+        ], ...[false, false]);
+
+        if (empty($goods)){
+
+            $this->clearCart();
+
+            return false;
+
+        }
+
+        $cartChanged = false;
+
+        foreach ($cart as $id => $qty){
+
+            if (empty($goods[$id])){
+
+                unset($cart[$id]);
+
+                $cartChanged = true;
+
+                continue;
+
+            }
+
+            $this->cart['goods'][$id] = $goods[$id];
+
+            $this->cart['goods'][$id]['qty'] = $qty;
+
+        }
+
+        if ($cartChanged){
+
+            $this->updateCart();
+
+        }
+
+        return $this->totalSum();
+
+    }
+
+    protected function totalSum(){
+
+        if (empty($this->cart['goods'])){
+
+            $this->clearCart();
+
+            return null;
+
+        }
+
+        $this->cart['total_sum'] = $this->cart['total_old_sum'] = $this->cart['total_qty'] = 0;
+
+        foreach ($this->cart['goods'] as $good){
+
+            $this->cart['total_qty'] += $good['qty'] ?? 0;
+
+            $this->cart['total_sum'] += round(($good['qty'] ?? 0) * ($good['price'] ?? 0), 2);
+
+            $this->cart['total_old_sum'] += round($good['qty'] * ($good['old_price'] ?? $good['price']), 2);
+
+        }
+
+        if ($this->cart['total_sum'] === $this->cart['total_old_sum']){
+
+            unset($this->cart['total_old_sum']);
+
+        }
+
+        return $this->cart;
+
+    }
+
+
+
+    protected function updateCart(){
+
+        $cart = &$this->getCart();
+
+        if (defined('CART') && strtolower(CART) === 'cookie'){
+
+            setcookie('cart', json_encode($cart), time() + 3600 * 24 * 4, PATH);
+
+        }
+
+    }
+
+    public function clearCart(){
+
+        unset($_COOKIE['cart'], $_SESSION['cart']);
+
+        if (defined('CART') && strtolower(CART) === 'cookie'){
+
+            setcookie('cart', '',1, PATH);
+
+        }
+
+        $this->cart = [];
+
+        return null;
+
+    }
+
+    protected function &getCart(){
+
+        if (!defined('CART') || strtolower(CART) !== 'cookie'){
+
+            if (!isset($_SESSION['cart'])){
+
+                $_SESSION['cart'] = [];
+
+            }
+
+            return $_SESSION['cart'];
+
+        }else{
+
+            if (!isset($_COOKIE['cart'])){
+
+                $_COOKIE['cart'] = [];
+
+            }else{
+
+                $_COOKIE['cart'] = is_string($_COOKIE['cart']) ? json_decode($_COOKIE['cart'], true) : $_COOKIE['cart'];
+
+            }
+
+            return $_COOKIE['cart'];
 
         }
 

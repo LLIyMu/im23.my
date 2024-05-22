@@ -31,7 +31,7 @@ class AjaxController extends BaseUser
 
 	            case 'add_to_cart':
 					
-					return $this->addToCart();
+					return $this->_addToCart();
 					
 					break;
 
@@ -43,8 +43,10 @@ class AjaxController extends BaseUser
 
     }
 	
-	protected function addToCart(){
-		return $this->ajaxData['qty'];
+	protected function _addToCart(){
+
+        return $this->addToCart($this->ajaxData['id'] ?? null, $this->ajaxData['qty'] ?? 1);
+
 	}
 
 }
