@@ -311,7 +311,7 @@ function addToCart() {
 
                                     if (typeof res[cartAttr] !== 'undefined'){
 
-                                        el.innerHTML = res[cartAttr];
+                                        el.innerHTML = res[cartAttr] + ' руб.';
 
                                     }
 

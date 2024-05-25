@@ -136,7 +136,7 @@
                         <div class="card-main-info__buttons">
                             <a data-addToCart="<?=$data['id']?>" href="#" <?=!empty($this->cart['goods'][$data['id']]) ? 'data-toCartAdded': ''?> class="card-main-info__button button-basket button-blue button-big button">
                                 <svg>
-                                    <use xlink:href="/assets/img/icons.svg#basket"></use>
+                                    <use xlink:href="<?=PATH . TEMPLATE?>/assets/img/icons.svg#basket"></use>
                                 </svg>
                                 <span>в корзину</span>
                             </a>

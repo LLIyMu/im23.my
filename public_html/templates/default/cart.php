@@ -41,10 +41,10 @@
                             <div class="total-basket-price">
                                 Итого:
                                 <?php if (!empty($this->cart['total_old_sum'])): ?>
-                                    <span class="total-basket-price_old-price"><?=$this->cart['total_old_sum']?> руб.</span>
+                                    <span class="total-basket-price_old-price" data-totalOldSum><?=$this->cart['total_old_sum']?> руб.</span>
                                 <?php endif;?>
 
-                                <span class="total-basket-price_new-price"><?=$this->cart['total_sum']?> руб.</span>
+                                <span class="total-basket-price_new-price" data-totalSum><?=$this->cart['total_sum']?> руб.</span>
                             </div>
                             <div class="basket-btns">
                                 <button class="basket-btn">Перейти к оформлению</button>
@@ -55,295 +55,43 @@
                         <div class="catalog-section__wrapper">
                             <div class="catalog-section-items">
                                 <div class="catalog-section-items__wrapper">
-
-
-
-
-                                    <div class="card-item card-item__internal card-item__line">
-                                        <div class="card-item__tabs_image">
-                                            <img src="assets/img/additional_offer.png" alt="">
-                                        </div>
-                                        <div class="card-item__tabs_description">
-                                            <div class="card-item__tabs_name">
-                                                <span>Размораживатель замков "ГЛАВДОР" GL-498,</span>
-                                                с силиконом, 70 мл /56
-                                            </div>
-                                            <div class="card-item__tabs_price">
-                                                Цена: <span class="card-item_old-price">98 руб.</span> <span class="card-item_new-price">72 руб.</span>
-                                            </div>
-                                        </div>
-                                        <button class="card-item__btn">
-                                            Удалить
-                                        </button>
-                                        <span class="card-main-info-size__body">
-                      <span class="card-main-info-size__control card-main-info-size__control_minus js-counterDecrement"></span>
-                      <span class="card-main-info-size__count js-counterShow">1</span>
-                      <span class="card-main-info-size__control card-main-info-size__control_plus js-counterIncrement"></span>
-                    </span>
-                                        <div class="icon-offer">
-                                            <svg>
-                                                <use xlink:href="/assets/img/icons.svg#hot"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-
-
-
-
-
-                                    <div class="card-item card-item__internal card-item__line">
-                                        <div class="card-item__tabs_image">
-                                            <img src="assets/img/additional_offer.png" alt="">
-                                        </div>
-                                        <div class="card-item__tabs_description">
-                                            <div class="card-item__tabs_name">
-                                                <span>Размораживатель замков "ГЛАВДОР" GL-498,</span>
-                                                с силиконом, 70 мл /56
-                                            </div>
-                                            <div class="card-item__tabs_price">
-                                                Цена: <span class="card-item_old-price">98 руб.</span> <span class="card-item_new-price">72 руб.</span>
-                                            </div>
-                                        </div>
-                                        <button class="card-item__btn">
-                                            Удалить
-                                        </button>
-                                        <span class="card-main-info-size__body">
-                      <span class="card-main-info-size__control card-main-info-size__control_minus js-counterDecrement"></span>
-                      <span class="card-main-info-size__count js-counterShow">1</span>
-                      <span class="card-main-info-size__control card-main-info-size__control_plus js-counterIncrement"></span>
-                    </span>
-                                        <div class="icon-offer">
-                                            <svg>
-                                                <use xlink:href="/assets/img/icons.svg#hot"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-
-
-
-
-
-                                    <div class="card-item card-item__internal card-item__line">
-                                        <div class="card-item__tabs_image">
-                                            <img src="assets/img/additional_offer.png" alt="">
-                                        </div>
-                                        <div class="card-item__tabs_description">
-                                            <div class="card-item__tabs_name">
-                                                <span>Размораживатель замков "ГЛАВДОР" GL-498,</span>
-                                                с силиконом, 70 мл /56
-                                            </div>
-                                            <div class="card-item__tabs_price">
-                                                Цена: <span class="card-item_old-price">98 руб.</span> <span class="card-item_new-price">72 руб.</span>
-                                            </div>
-                                        </div>
-                                        <button class="card-item__btn">
-                                            Удалить
-                                        </button>
-                                        <span class="card-main-info-size__body">
-                      <span class="card-main-info-size__control card-main-info-size__control_minus js-counterDecrement"></span>
-                      <span class="card-main-info-size__count js-counterShow">1</span>
-                      <span class="card-main-info-size__control card-main-info-size__control_plus js-counterIncrement"></span>
-                    </span>
-                                        <div class="icon-offer">
-                                            <svg>
-                                                <use xlink:href="/assets/img/icons.svg#hot"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-
-
-
-
-
-                                    <div class="card-item card-item__internal card-item__line">
-                                        <div class="card-item__tabs_image">
-                                            <img src="assets/img/additional_offer.png" alt="">
-                                        </div>
-                                        <div class="card-item__tabs_description">
-                                            <div class="card-item__tabs_name">
-                                                <span>Размораживатель замков "ГЛАВДОР" GL-498,</span>
-                                                с силиконом, 70 мл /56
-                                            </div>
-                                            <div class="card-item__tabs_price">
-                                                Цена: <span class="card-item_old-price">98 руб.</span> <span class="card-item_new-price">72 руб.</span>
-                                            </div>
-                                        </div>
-                                        <button class="card-item__btn">
-                                            Удалить
-                                        </button>
-                                        <span class="card-main-info-size__body">
-                      <span class="card-main-info-size__control card-main-info-size__control_minus js-counterDecrement"></span>
-                      <span class="card-main-info-size__count js-counterShow">1</span>
-                      <span class="card-main-info-size__control card-main-info-size__control_plus js-counterIncrement"></span>
-                    </span>
-                                        <div class="icon-offer">
-                                            <svg>
-                                                <use xlink:href="/assets/img/icons.svg#hot"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-
-
-
-
-
-                                    <div class="card-item card-item__internal card-item__line">
-                                        <div class="card-item__tabs_image">
-                                            <img src="assets/img/additional_offer.png" alt="">
-                                        </div>
-                                        <div class="card-item__tabs_description">
-                                            <div class="card-item__tabs_name">
-                                                <span>Размораживатель замков "ГЛАВДОР" GL-498,</span>
-                                                с силиконом, 70 мл /56
-                                            </div>
-                                            <div class="card-item__tabs_price">
-                                                Цена: <span class="card-item_old-price">98 руб.</span> <span class="card-item_new-price">72 руб.</span>
-                                            </div>
-                                        </div>
-                                        <button class="card-item__btn">
-                                            Удалить
-                                        </button>
-                                        <span class="card-main-info-size__body">
-                      <span class="card-main-info-size__control card-main-info-size__control_minus js-counterDecrement"></span>
-                      <span class="card-main-info-size__count js-counterShow">1</span>
-                      <span class="card-main-info-size__control card-main-info-size__control_plus js-counterIncrement"></span>
-                    </span>
-                                        <div class="icon-offer">
-                                            <svg>
-                                                <use xlink:href="/assets/img/icons.svg#hot"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-
-
-
-
-
-                                    <div class="card-item card-item__internal card-item__line">
-                                        <div class="card-item__tabs_image">
-                                            <img src="assets/img/additional_offer.png" alt="">
-                                        </div>
-                                        <div class="card-item__tabs_description">
-                                            <div class="card-item__tabs_name">
-                                                <span>Размораживатель замков "ГЛАВДОР" GL-498,</span>
-                                                с силиконом, 70 мл /56
-                                            </div>
-                                            <div class="card-item__tabs_price">
-                                                Цена: <span class="card-item_old-price">98 руб.</span> <span class="card-item_new-price">72 руб.</span>
-                                            </div>
-                                        </div>
-                                        <button class="card-item__btn">
-                                            Удалить
-                                        </button>
-                                        <span class="card-main-info-size__body">
-                      <span class="card-main-info-size__control card-main-info-size__control_minus js-counterDecrement"></span>
-                      <span class="card-main-info-size__count js-counterShow">1</span>
-                      <span class="card-main-info-size__control card-main-info-size__control_plus js-counterIncrement"></span>
-                    </span>
-                                        <div class="icon-offer">
-                                            <svg>
-                                                <use xlink:href="/assets/img/icons.svg#hot"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-
-
-
-
-
-                                    <div class="card-item card-item__internal card-item__line">
-                                        <div class="card-item__tabs_image">
-                                            <img src="assets/img/additional_offer.png" alt="">
-                                        </div>
-                                        <div class="card-item__tabs_description">
-                                            <div class="card-item__tabs_name">
-                                                <span>Размораживатель замков "ГЛАВДОР" GL-498,</span>
-                                                с силиконом, 70 мл /56
-                                            </div>
-                                            <div class="card-item__tabs_price">
-                                                Цена: <span class="card-item_old-price">98 руб.</span> <span class="card-item_new-price">72 руб.</span>
-                                            </div>
-                                        </div>
-                                        <button class="card-item__btn">
-                                            Удалить
-                                        </button>
-                                        <span class="card-main-info-size__body">
-                      <span class="card-main-info-size__control card-main-info-size__control_minus js-counterDecrement"></span>
-                      <span class="card-main-info-size__count js-counterShow">1</span>
-                      <span class="card-main-info-size__control card-main-info-size__control_plus js-counterIncrement"></span>
-                    </span>
-                                        <div class="icon-offer">
-                                            <svg>
-                                                <use xlink:href="/assets/img/icons.svg#hot"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-
-
-
-
-
-                                    <div class="card-item card-item__internal card-item__line">
-                                        <div class="card-item__tabs_image">
-                                            <img src="assets/img/additional_offer.png" alt="">
-                                        </div>
-                                        <div class="card-item__tabs_description">
-                                            <div class="card-item__tabs_name">
-                                                <span>Размораживатель замков "ГЛАВДОР" GL-498,</span>
-                                                с силиконом, 70 мл /56
-                                            </div>
-                                            <div class="card-item__tabs_price">
-                                                Цена: <span class="card-item_old-price">98 руб.</span> <span class="card-item_new-price">72 руб.</span>
-                                            </div>
-                                        </div>
-                                        <button class="card-item__btn">
-                                            Удалить
-                                        </button>
-                                        <span class="card-main-info-size__body">
-                      <span class="card-main-info-size__control card-main-info-size__control_minus js-counterDecrement"></span>
-                      <span class="card-main-info-size__count js-counterShow">1</span>
-                      <span class="card-main-info-size__control card-main-info-size__control_plus js-counterIncrement"></span>
-                    </span>
-                                        <div class="icon-offer">
-                                            <svg>
-                                                <use xlink:href="/assets/img/icons.svg#hot"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-
-
-
-
-
-                                    <div class="card-item card-item__internal card-item__line">
-                                        <div class="card-item__tabs_image">
-                                            <img src="assets/img/additional_offer.png" alt="">
-                                        </div>
-                                        <div class="card-item__tabs_description">
-                                            <div class="card-item__tabs_name">
-                                                <span>Размораживатель замков "ГЛАВДОР" GL-498,</span>
-                                                с силиконом, 70 мл /56
-                                            </div>
-                                            <div class="card-item__tabs_price">
-                                                Цена: <span class="card-item_old-price">98 руб.</span> <span class="card-item_new-price">72 руб.</span>
-                                            </div>
-                                        </div>
-                                        <button class="card-item__btn">
-                                            Удалить
-                                        </button>
-                                        <span class="card-main-info-size__body">
-                      <span class="card-main-info-size__control card-main-info-size__control_minus js-counterDecrement"></span>
-                      <span class="card-main-info-size__count js-counterShow">1</span>
-                      <span class="card-main-info-size__control card-main-info-size__control_plus js-counterIncrement"></span>
-                    </span>
-                                        <div class="icon-offer">
-                                            <svg>
-                                                <use xlink:href="/assets/img/icons.svg#hot"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-
-
+	                                <?php foreach($this->cart['goods'] as $item): ?>
+		                                <div class="card-item card-item__internal card-item__line" data-productContainer>
+			                                <div class="card-item__tabs_image">
+				                                <img src="<?=$this->img($item['img'])?>" alt="<?=$item['img']?>">
+			                                </div>
+			                                <div class="card-item__tabs_description">
+				                                <div class="card-item__tabs_name">
+					                                <span><?=$item['name']?></span>
+				                                </div>
+				                                <div class="card-item__tabs_price">
+					                                Цена:
+					                                <?php if(!empty($item['old_price'])):?>
+					                                    <span class="card-item_old-price"><?=$item['old_price']?> руб.</span>
+					                                <?php endif;?>
+					                                <span class="card-item_new-price"><?=$item['price']?>  руб.</span>
+				                                </div>
+			                                </div>
+			                                <button class="card-item__btn">
+				                                Удалить
+			                                </button>
+			                                <span class="card-main-info-size__body">
+				                                <span class="card-main-info-size__control card-main-info-size__control_minus js-counterDecrement" data-quantityMinus></span>
+				                                <span class="card-main-info-size__count js-counterShow" data-quantity><?=$this->cart['goods'][$item['id']]['qty']?></span>
+				                                <span class="card-main-info-size__control card-main-info-size__control_plus js-counterIncrement" data-quantityPlus></span>
+						                    </span>
+			                                <?php if(!empty($item['hit'])):?>
+				                                <div class="icon-offer">
+					                                <svg>
+						                                <use xlink:href="<?=PATH . TEMPLATE?>/assets/img/icons.svg#hot"></use>
+					                                </svg>
+				                                </div>
+			                                <?php endif;?>
+			                                <a style="display: none" data-addToCart="<?=$item['id']?>" href="#" data-toCartAdded class="card-main-info__button button-basket button-blue button-big button">
+				                               
+			                                </a>
+		                                </div>
+	                                <?php endforeach;?>
                                 </div>
                             </div>
                         </div>
@@ -383,7 +131,7 @@
                     </div>
                     <div class="amount-pay-wrapp">
                         Сумма к оплате:
-                        <span class="amount-pay">3247 руб.</span>
+                        <span class="amount-pay" data-totalSum><?=$this->cart['total_sum']?> руб.</span>
                     </div>
                     <input class="execute-order_btn" type="submit" name="" value="Оформить заказ">
                 </form>
